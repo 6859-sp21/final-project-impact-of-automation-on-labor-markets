@@ -1,0 +1,495 @@
+acscode,webb_acs_title,webb_pct_software,webb_pct_robot,webb_pct_ai,number_workers
+,,,,,156935511.6599999
+0,,,,,0
+111021,General and Operations Managers,50,26,68,1083520.84
+1110XX,Chief Executives and Legislators,30,9,28,1743804.97
+112011,Advertising and Promotions Managers,68,37,82,0
+112020,Marketing and Sales Managers,68,37,82,1273678.89
+112031,Public Relations and Fundraising Managers,68,37,82,0
+113011,Administrative Services Managers,50,26,68,183308.41
+113021,Computer and Information Systems Managers,50,26,68,783399.63
+113031,Financial Managers,28,7,67,1461045.329999999
+113051,Industrial Production Managers,50,26,68,297424.39
+113061,Purchasing Managers,2,2,23,242978.06
+113071,"Transportation, Storage, and Distribution Managers",50,26,68,325230.9
+113111,Compensation and Benefits Managers,21,7,75,0
+113121,Human Resources Managers,21,7,75,390521.02
+113131,Training and Development Managers,21,7,75,0
+119013,"Farmers, Ranchers, and Other Agricultural Managers",94,55,94,847686.1699999998
+119021,Constructions Managers,50,26,68,964149.53
+119030,Education Administrators,26,13,63,1027366.74
+119041,Architectural and Engineering Managers,50,26,68,148403.76
+119051,Food Service Managers,50,26,68,1379429.94
+119071,Gaming Managers,50,26,68,0
+119081,Lodging Managers,50,26,68,0
+119111,Medical and Health Services Managers,71,35,84,632273.65
+119121,Natural Science Managers,50,26,68,19274.64
+119141,"Property, Real Estate, and Community Association Managers",13,21,34,735085.12
+119151,Social and Community Service Managers,50,26,68,487851.3100000001
+119161,Emergency Management Directors,50,26,68,0
+119XXX,"Miscellaneous Managers, Including Funeral Service Managers and Postmasters and Mail Superintendents",50,26,68,5758829.399999999
+131011,"Agents and Business Managers of Artists, Performers, and Athletes",9,25,28,56166.91
+131021,"Buyers and Purchasing Agents, Farm Products",59,25,100,12531.85
+131022,"Wholesale and Retail Buyers, Except Farm Products",48,41,85,215219.8
+131023,"Purchasing Agents, Except Wholesale, Retail, and Farm Products",64,25,80,292374.1900000001
+131030,"Claims Adjusters, Appraisers, Examiners, and Investigators",44,18,53,339023.8599999999
+131041,Compliance Officers,17,22,42,362754.05
+131051,Cost Estimators,50,26,68,113907.71
+131070,Human Resources Workers,10,6,44,1125141.11
+131081,Logisticians,50,19,83,165545.49
+131111,Management Analysts,33,25,80,1094207.1
+131121,"Meeting, Convention, and Event Planners",50,26,68,301062.2600000001
+131131,Fundraisers,24,19,54,0
+131141,"Compensation, Benefits, and Job Analysis Specialists",10,6,44,0
+131151,Training and Development Specialists,10,6,44,0
+131161,Market Research Analysts and Marketing Specialists,49,26,87,0
+131199,"Business Operations Specialists, All Other",24,19,54,664143.64
+132011,Accountants and Auditors,13,12,48,1881342.89
+132021,Appraisers and Assessors of Real Estate,60,33,88,82881.92000000003
+132031,Budget Analysts,37,16,81,50108.39
+132041,Credit Analysts,37,16,81,24664.7
+132051,Financial Analysts,37,16,81,336047.13
+132052,Personal Financial Advisors,37,16,81,508250.63
+132053,Insurance Underwriters,21,7,84,118166.55
+132061,Financial Examiners,17,22,42,28796.19
+132070,Credit Counselors and Loan Officers,37,16,81,436826.7899999999
+132081,"Tax Examiners and Collectors, and Revenue Agents",13,12,48,72333.27
+132082,Tax Preparers,37,16,81,136871.87
+132099,"Financial Specialists, All Other",37,16,81,88643.93999999999
+151111,Computer Scientists and Systems Analysts,70,32,83,0
+151121,Computer and Information Research Scientists,70,32,83,1991044.51
+151122,Information Security Analysts,70,32,83,0
+151131,Computer Programmers,98,88,94,388383.8599999999
+151134,Web Developers,70,32,83,0
+15113X,Computer systems analysts and computer scientists,70,32,83,2013525.77
+151141,Database Administrators,70,32,83,116763.02
+151142,Network and Computer Systems Administrators,70,32,83,286630.6800000001
+151143,Computer Network Architects,70,32,83,0
+151150,Computer Support Specialists,70,32,83,679344.1300000004
+151199,"Computer Occupations, All Other",70,32,83,0
+152011,Actuaries,39,12,93,31003.34
+152031,Operations Research Analysts,50,19,83,186296.93
+1520XX,"Miscellaneous mathematical science occupations, including mathematicians and statisticians",62,18,89,143503.46
+171010,"Architects, Except Naval",67,25,87,251807
+171020,"Surveyors, Cartographers, and Photogrammetrists",80,54,84,35254.23
+172011,Aerospace Engineers,20,36,80,123078.86
+172041,Chemical Engineers,99,60,100,88183.67
+172051,Civil Engineers,45,18,85,350235.16
+172061,Computer Hardware Engineers,74,52,87,88392.37
+172070,Electrical and Electronics Engineers,74,52,87,292429.58
+172081,Environmental Engineers,75,52,90,32279.84999999999
+1720XX,Biomedical and agricultural engineers,75,52,90,0
+172110,"Industrial Engineers, including Health and Safety",62,50,84,227882.49
+172121,Marine Engineers and Naval Architects,64,36,100,9531.349999999999
+172131,Materials Engineers,72,19,100,62251.67
+172141,Mechanical Engineers,69,22,75,348046.5199999998
+1721XX,"Petroleum, mining and geological engineers, including mining safety engineers",70,55,85,34188.72
+1721YY,Miscellaneous engineeers including nuclear engineers,75,52,90,674887.0399999999
+173010,Drafters,49,34,81,151594.67
+173020,"Engineering Technicians, Except Drafters",92,65,91,477121.47
+173031,Surveying and Mapping Technicians,80,54,84,40365.41
+191010,Agricultural and Food Scientists,17,25,53,37759.36000000001
+191020,Biological Scientists,62,52,82,94132.59000000001
+191030,Conservation Scientists and Foresters,64,54,77,21700.36
+1910XX,"Medical Scientists, and Life Scientists, All Other",59,25,93,139573.19
+192010,Astronomers and Physicists,75,54,100,14592.45
+192021,Atmospheric and Space Scientists,44,16,100,16912.99
+192030,Chemists and Materials Scientists,47,18,85,107230.27
+192040,Environmental Scientists and Geoscientists,59,25,91,106956.24
+192099,"Physical Scientists, All Other",78,25,89,314481.8700000001
+193011,"Economists, market and survey researchers",49,26,87,41638.59
+193030,Psychologists,30,11,85,207519.0900000001
+193051,Urban and Regional Planners,24,8,84,103893.96
+1930XX,"Miscellaneous Social Scientists, Including Survey Researchers and Sociologists",59,41,87,0
+194011,Agricultural and Food Science Technicians,91,51,84,9876.299999999999
+194021,Biological Technicians,91,51,84,32644.40000000001
+194031,Chemical Technicians,59,55,23,52212.71999999999
+1940XX,"Geological and Petroleum Technicians, and Nuclear Technicians",92,65,91,0
+1940YY,"Technicians, n.e.c.",80,51,82,318182.13
+211010,Counselors,17,9,40,926398.1100000002
+211020,Social Workers,20,17,60,1265210.73
+211092,Probation Officers and Correctional Treatment Specialists,5,9,21,0
+211093,Social and Human Service Assistants,5,9,21,0
+21109X,Welfare service workers,5,9,21,0
+212011,Clergy,5,1,2,469676.9699999999
+212021,"Directors, Religious Activities and Education",15,8,63,75787.07999999999
+212099,,,,,53754.86
+231012,Judicial Law Clerks,40,16,79,0
+2310XX,"Lawyers, and judges, magistrates, and other judicial workers",40,16,79,1257649.32
+232011,Paralegals and Legal Assistants,16,3,25,464491.09
+232090,Miscellaneous Legal Support Workers,16,3,25,206854.26
+251000,"Subject instructors, college",1,3,1,1260523
+252010,Preschool and Kindergarten Teachers,30,51,44,695767.45
+252020,Elementary and Middle School Teachers,22,14,40,3664434.450000001
+252030,Secondary School Teachers,19,10,43,1036274.23
+252050,Special Education Teachers,24,25,54,366713.3899999999
+253000,"Teachers, n.e.c.",37,34,55,1000844.09
+254010,"Archivists, Curators, and Museum Technicians",7,13,28,70339.98999999999
+254021,Librarians,7,18,26,196814.34
+254031,Library Technicians,17,38,9,23332.53
+259041,Teacher Assistants,7,33,7,1345151.75
+2590XX,"Teachers, n.e.c.",37,34,55,213436.68
+271010,Artists and Related Workers,66,33,52,316516.2
+271020,Designers,59,47,77,1003679.65
+272011,Actors,32,25,43,244407.19
+272012,Producers and Directors,32,25,43,0
+272020,"Athletes, Coaches, Umpires, and Related Workers",27,54,52,318631.8
+272030,Dancers and Choreographers,5,16,14,16759.84
+272040,"Musicians, Singers, and Related Workers",13,9,28,212002.08
+272099,,,,,88775.70999999999
+273010,Announcers,17,17,9,29550.38
+273020,"News Analysts, Reporters and Correspondents",5,6,14,242586.92
+273031,Public Relations Specialists,18,10,23,145607.84
+273041,Editors,5,6,14,0
+273042,Technical Writers,38,18,80,61525.51000000001
+273043,Writers and Authors,5,2,23,209859.56
+273090,Miscellaneous Media and Communication Workers,1,1,1,104552.1
+274021,Photographers,84,68,80,265625.3
+274030,"Television, Video, and Motion Picture Camera Operators and Editors",84,68,80,121075.28
+2740XX,"Broadcast and Sound Engineering Technicians and Radio Operators, and media and communication equipment workers, all other",100,77,82,127593.53
+291011,Chiropractors,8,16,28,63972.70999999999
+291020,Dentists,84,62,54,189295.89
+291031,Dieticians and Nutritionists,24,19,54,116936.47
+291041,Optometrists,66,64,100,44152.52
+291051,Pharmacists,24,13,17,358360.3700000001
+291060,Physicians and Surgeons,27,11,53,997892.5
+291071,Physician Assistants,92,35,24,152858.48
+291081,Podiatrists,1,4,26,14422.33
+291122,Occupational Therapists,72,49,93,155805.52
+291123,Physical Therapists,64,43,93,277665.9299999999
+291124,Radiation Therapists,26,22,54,9063.550000000001
+291125,Recreational Therapists,26,22,54,4076.09
+291126,Respiratory Therapists,62,64,59,131422.29
+291127,SpeechLanguage Pathologists,59,25,59,199970.28
+29112X,,,,,234834.85
+291131,Veterinarians,70,59,85,96164.56999999999
+291141,Registered Nurses,43,22,78,3542845.52
+291151,Nurse Anesthetists,43,22,78,0
+291181,Audiologists,59,25,59,8286.450000000001
+291199,"Health Diagnosing and Treating Practitioners, All Other",8,16,28,42283.08000000001
+2911XX,Registered nurses,43,22,78,0
+292010,Clinical Laboratory Technologists and Technicians,87,53,100,331445.7800000001
+292021,Dental Hygienists,32,62,76,240071.7
+292030,Diagnostic Related Technologists and Technicians,87,60,58,509408.31
+292041,Emergency Medical Technicians and Paramedics,39,52,42,253083.48
+292050,Health Practitioner Support Technologists and Technicians,39,52,42,721382.7699999999
+292061,Licensed Practical and Licensed Vocational Nurses,44,76,23,727973.6299999999
+292071,Medical Records and Health Information Technicians,32,33,34,186006.74
+292081,"Opticians, Dispensing",63,79,34,39732.34
+292090,Miscellaneous Health Technologists and Technicians,39,52,42,160878
+299000,"Health technologists and technicians, n.e.c.",39,52,42,176024.05
+311010,"Nursing, Psychiatric, and Home Health Aides",30,57,26,2167893.33
+312010,Occupational Therapy Assistants and Aides,30,57,26,45414.04
+312020,Physical Therapist Assistants and Aides,30,57,26,77662.60000000001
+319011,Massage Therapists,21,60,13,194224.14
+319091,Dental Assistants,62,59,14,317783.0600000001
+319092,Medical Assistants,30,57,26,989898.5600000002
+319094,Medical Transcriptionists,30,57,26,0
+319095,Pharmacy Aides,30,57,26,0
+319096,Veterinary Assistants and Laboratory Animal Caretakers,30,57,26,0
+319097,Phlebotmists,30,57,26,0
+31909X,Health and nursing aides,30,57,26,0
+331011,First-Line Supervisors of Correctional Officers,63,38,77,60145.54999999999
+331012,First-Line Supervisors of Police and Detectives,21,47,29,95722.75
+331021,First-Line Supervisors of Fire Fighting and Prevention Workers,37,36,58,44534.86
+331099,,,,,107372.21
+332011,Firefighters,25,51,58,327549.61
+332020,Fire Inspectors,25,51,58,23225.46
+333010,"Bailiffs, Correctional Officers, and Jailers",59,54,28,346593.67
+333021,Detectives and Criminal Investigators,63,38,77,870736.58
+333050,Police Officers,63,38,77,0
+3330XX,Miscellaneous law enforcement workers,59,54,28,187208.77
+339011,Animal Control Workers,20,75,46,5492.959999999999
+339021,Private Detectives and Investigators,67,54,76,82073.69999999998
+339030,Security Guards and Gaming Surveillance Officers,67,54,76,883622.73
+339091,Crossing Guards,15,10,16,58143.05999999999
+339093,Transportation Security Screeners,90,64,98,0
+33909X,"Protective service, n.e.c.",20,75,46,0
+351011,Chefs and Head Cooks,9,62,21,2472086.95
+351012,First-Line Supervisors of Food Preparation and Serving Workers,67,9,26,497690.83
+352010,Cooks,9,62,21,0
+352021,Food Preparation Workers,2,75,1,967914.54
+353011,Bartenders,7,84,6,396344.42
+353021,"Combined Food Preparation and Serving Workers, Including Fast Food",7,76,7,755209.6299999999
+353022,"Counter Attendant, Cafeteria, Food Concession, and Coffee Shop",7,76,7,0
+353031,Waiters and Waitresses,16,47,7,2085754.89
+353041,"Food Servers, Nonrestaurant",7,76,7,199869.7699999999
+359021,Dishwashers,7,76,7,269265.39
+359031,"Host and Hostesses, Restaurant, Lounge, and Coffee Shop",7,76,7,283775.2499999999
+3590XX,Miscellaneous food preparation and serving related workers including dining room and cafeteria attendants and bartender helpers,7,76,7,345826.94
+371011,First-Line Supervisors of Housekeeping and Janitorial Workers,37,26,76,329299.2600000001
+371012,"First-Line Supervisors of Landscaping, Lawn Service, and Groundskeeping Workers",15,25,35,239436.57
+372012,Maids and Housekeeping Cleaners,42,97,5,1432069.19
+37201X,Janitors,80,98,31,2437688.239999999
+372021,Pest Control Workers,100,96,100,108754.94
+373010,Grounds Maintenance Workers,49,73,52,1220835.97
+391010,First-Line Supervisors of Gaming Workers,50,26,68,0
+391021,First-Line Supervisors of Personal Service Workers,15,9,21,263075.84
+392011,Animal Trainers,97,93,93,66027.65000000001
+392021,Nonfarm Animal Caretakers,7,60,1,298640.75
+393010,Gaming Services Workers,70,80,40,77379.95
+393021,Motion Picture Projectionists,79,96,76,0
+393031,"Ushers, Lobby Attendants, and Ticket Takers",44,79,21,29663.46
+393090,Miscellaneous Entertainment Attendants and Related Workers,70,80,40,208723.48
+394031,"Morticians, Undertakers, and Funeral Directors",2,10,1,0
+3940XX,"Personal service occupations, n.e.c",21,60,13,47954.42999999999
+395011,Barbers,1,4,2,133375.08
+395012,"Hairdressers, Hairstylists, and Cosmetologists",15,55,28,766980.3499999999
+395090,Miscellaneous Personal Appearance Workers,15,55,28,373906.5899999998
+396010,"Baggage Porters, Bellhops, and Concierges",91,84,14,66602.97
+397010,Tour and Travel Guides,27,54,20,84637.29000000001
+399011,Childcare Workers,38,53,25,1260916.45
+399021,Personal Care Aides,30,57,26,1378308.32
+399030,Recreation and Fitness Workers,17,19,14,381081.89
+399041,Residential Advisors,38,53,25,22988.93
+399099,,,,,135555.28
+411011,First-Line Supervisors of Retail Sales Workers,28,20,61,4201981.649999999
+411012,First-Line Supervisors of Non-Retail Sales,28,20,61,0
+412010,Cashiers,65,23,38,2747576.099999999
+412021,Counter and Rental Clerks,2,3,2,80809.44
+412022,Parts Salespersons,27,11,20,187996.26
+412031,Retail Salespersons,2,69,3,3001779.369999998
+413011,Advertising Sales Agents,6,6,16,186733.04
+413021,Insurance Sales Agents,14,2,33,680179.8
+413031,"Securities, Commodities, and Financial Services Sales Agents",20,8,64,198438.94
+413041,Travel Agents,15,43,46,82470.06
+413099,"Sales Representatives, Services, All Other",11,4,18,587672.48
+414010,"Sales Representatives, Wholesale and Manufacturing",11,4,18,1254601.58
+419010,"Models, Demonstrators, and Product Promoters",5,18,2,58817.15
+419020,Real Estate Brokers and Sales Agents,60,33,88,1092674.29
+419031,Sales Engineers,17,4,47,37401.61
+419041,Telemarketers,11,4,18,52826.7
+419091,"Door-to-Door Sales Workers, News and Street Vendors, and Related Workers",39,10,13,104402.84
+419099,,,,,237854.94
+431011,First-Line Supervisors of Office and Administrative Support Workers,8,8,29,1290488.39
+432011,"Switchboard Operators, Including Answering Service",83,59,35,5852.49
+432021,Telephone Operators,83,59,35,21461.49
+432099,,,,,0
+433011,Bill and Account Collectors,2,2,9,101115.17
+433021,Billing and Posting Clerks,13,18,28,453868.8600000001
+433031,"Bookkeeping, Accounting, and Auditing Clerks",45,35,14,1187212.47
+433041,Gaming Cage Workers,65,23,38,0
+433051,Payroll and Timekeeping Clerks,2,2,2,144330.2
+433061,Procurement Clerks,6,19,18,40047.61
+433071,Tellers,20,17,24,299283.07
+433099,,,,,125497.94
+434011,Brokerage Clerks,39,48,24,0
+434031,"Court, Municipal, and License Clerks",26,33,21,111629.59
+434041,"Credit Authorizers, Checkers, and Clerks",7,6,14,31336.13
+434051,Customer Service Representatives,38,10,42,2509988.27
+434061,"Eligibility Interviewers, Government Programs",5,1,21,80432.65000000001
+434071,File Clerks,17,25,6,207942.52
+434081,"Hotel, Motel, and Resort Desk Clerks",2,9,2,96959.75999999998
+434111,"Interviewers, Except Eligibility and Loan",7,6,14,164492.75
+434121,"Library Assistants, Clerical",17,38,9,63786.59
+434131,Loan Interviewers and Clerks,38,10,42,91198.19
+434141,New Account Clerks,7,6,14,20512.32
+434161,"Human Resources Assistants, Except Payroll and Timekeeping",91,6,21,31153.52
+434171,Receptionists and Information Clerks,71,49,59,1267997.12
+434181,Reservation and Transportation Ticket Agents and Travel Clerks,15,43,46,117850.72
+434199,,,,,94655.70999999998
+434XXX,Correspondent clerks and order clerks,2,1,2,118359.32
+435011,Cargo and Freight Agents,79,37,77,29029.46
+435021,Couriers and Messengers,30,68,13,473312.4300000001
+435030,Dispatchers,96,54,100,327817.2
+435041,"Meter Readers, Utilities",44,75,9,30065.75
+435051,Postal Service Clerks,21,64,3,88029.06000000003
+435052,Postal Service Mail Carriers,1,1,1,328974.91
+435053,"Postal Service Mail Sorters, Processors, and Processing Machine Operators",21,64,3,59733.18
+435061,"Production, Planning, and Expediting Clerks",72,3,23,306761.91
+435071,"Shipping, Receiving, and Traffic Clerks",79,37,77,605715.9799999999
+435081,Stock Clerks and Order Fillers,6,19,18,1597993.069999999
+435111,"Weighers, Measurers, Checkers, and Samplers, Recordkeeping",98,64,63,61738.14999999999
+436010,Secretaries and Administrative Assistants,33,43,9,2685054.01
+439011,Computer Operators,84,61,68,0
+439021,Data Entry Keyers,63,60,94,239113.21
+439022,Word Processors and Typists,18,50,9,56725.84
+439041,Insurance Claims and Policy Processing Clerks,44,18,53,289469.1699999999
+439051,"Mail Clerks and Mail Machine Operators, Except Postal Service",79,79,92,55940.85
+439061,"Office Clerks, General",47,41,16,1352500.74
+439071,"Office Machine Operators, Except Computer",91,77,87,26494.45
+439081,Proofreaders and Copy Markers,64,47,93,10279.34
+439111,Statistical Assistants,61,7,67,88509.21000000001
+439XXX,Miscellaneous office and administrative support workers including desktop publishers,26,33,21,584380.96
+451011,"First-Line Supervisors of farming, fishing, and forestry workers",82,60,100,63321.00999999999
+452011,Agricultural Inspectors,82,67,93,8418.860000000001
+452041,"Graders and Sorters, Agricultural Products",15,54,82,44135.17000000001
+4520XX,Miscellaneous agricultural workers including animal breeders,97,93,93,978249.6399999995
+453000,Fishing and hunting workers,61,65,28,33476.23
+454011,Forest and Conservation Workers,91,81,55,30144.27
+454020,Logging Workers,91,81,55,42366.95999999999
+471011,First-Line Supervisors of Construction Trades and Extraction Workers,41,48,87,725605.84
+472011,Boilermakers,24,91,21,24290.59
+472020,"Brickmasons, Blockmasons, and Stonemasons",49,92,35,128847.49
+472031,Carpenters,82,77,85,1242858.27
+472040,"Carpet, Floor, and Tile Installers and Finishers",49,92,35,174067.39
+472050,"Cement Masons, Concrete Finishers, and Terrazzo Workers",37,74,20,51846.53000000001
+472061,Construction Laborers,68,88,48,2143748.18
+472071,"Paving, Surfacing, and Tamping Equipment Operators",99,96,81,0
+47207X,"Construction equipment operators except paving, surfacing, and tamping equipment operators",99,100,83,366089.66
+472080,"Drywall Installers, Ceiling Tile Installers, and Tapers",39,61,35,161123.28
+472111,Electricians,40,67,60,1008056.82
+472121,Glaziers,91,81,85,46283.8
+472130,Insulation Workers,66,77,44,60889.25
+472141,"Painters, Construction and Maintenance",84,80,54,491848.6499999998
+472142,Paperhangers,64,68,26,0
+472150,"Pipelayers, Plumbers, Pipefitters, and Steamfitters",74,83,43,572157.46
+472161,Plasterers and Stucco Masons,60,66,23,11727.97
+472171,Reinforcing Iron and Rebar Workers,71,96,34,0
+472181,Roofers,70,80,54,204362
+472211,Sheet Metal Workers,24,52,57,124741.63
+472221,Structural Iron and Steel Workers,71,96,34,69382.78
+473010,"Helpers, Construction Trades",44,96,14,55049.08
+474011,Construction and Building Inspectors,85,84,100,109348.24
+474021,Elevator Installers and Repairers,100,98,100,13517.55
+474031,Fence Erectors,44,68,57,20375.78
+474041,Hazardous Materials Removal Workers,66,77,44,53612.22
+474051,Highway Maintenance Workers,68,88,48,138825.8
+474061,Rail-Track Laying and Maintenance Equipment Operators,85,94,49,7523.580000000001
+475021,"Earth Drillers, Except Oil and Gar",75,80,82,31009.38
+475031,"Explosives Workers, Ordnance Handling Experts, and Blasters",63,92,23,7984.77
+475040,Mining Machine Operators,98,96,89,29141.04
+4750XX,Miscellaneous extraction workers including roof bolters and helpers,59,79,54,49667.06
+4750YY,"Derrick, rotary drill, and service unit operators, and roustabouts, oil, gas, and mining",59,84,53,40481.44
+47XXXX,"Miscellaneous construction workers including solar Photovaltaic Installers, and septic tank servicers and sewer pipe cleaners",44,68,57,57516.77
+491011,"First-Line Supervisors of Mechanics, Installers, and Repairers",70,51,94,244132.7
+492011,"Computer, Automated Teller, and Office Machine Repairers",66,68,67,183255.63
+492020,Radio and Telecommunications Equipment Installers and Repairers,69,68,58,134049.47
+492091,Avionics Technicians,30,61,35,9684.74
+492092,"Electric Motor, Power Tool, and Related Repairers",30,61,35,21475.44
+492096,"Electronic Equipment Installers and Repairers, Motor Vehicles",30,61,35,0
+492097,Electronic Home Entertainment Equipment Installers and Repairers,71,59,84,48829.74
+492098,Security and Fire Alarm Systems Installers,40,67,60,79863.67
+49209X,"Electrical and electronics repairers, transportation equipment, and industrial and utility",71,59,84,21368.41
+493011,Aircraft Mechanics and Service Technicians,22,77,40,179194.68
+493021,Automotive Body and Related Repairers,17,69,21,132916.96
+493022,Automotive Glass Installers and Repairers,17,69,21,6877.59
+493023,Automotive Service Technicians and Mechanics,24,61,45,788440.2699999999
+493031,Bus and Truck Mechanics and Diesel Engine Specialists,60,92,59,355250.9300000001
+493040,Heavy Vehicle and Mobile Equipment Service Technicians and Mechanics,78,81,60,185228.86
+493050,Small Engine Mechanics,62,66,54,55306.43
+493090,"Miscellaneous Vehicle and Mobile Equipment Mechanics, Installers, and Repairers",26,81,25,90109.33999999998
+499010,Control and Valve Installers and Repairers,65,66,46,23343.24
+499021,"Heating, Air Conditioning, and Refrigeration Mechanics and Installers",47,69,24,424818.4900000001
+499031,Home Appliance Repairers,61,68,67,46237.75000000001
+499043,"Maintenance Workers, Machinery",72,81,76,30571.35
+499044,Millwrights,33,89,34,65360.58
+49904X,Industrial machinery repairers,64,82,66,362157.31
+499051,Electrical Power-Line Installers and Repairers,67,75,44,133335.18
+499052,Telecommunications Line Installers and Repairers,69,68,58,174068.92
+499060,Precision Instrument and Equipment Repairers,39,67,46,72359.15000000001
+499071,"Maintenance and Repair Workers, General",91,84,57,613328.66
+499091,"Coin, Vending, and Amusement Machine Servicers and Repairers",91,84,57,15164.77
+499094,Locksmiths and Safe Repairers,5,33,7,18050.07
+499095,Manufactured Building and Mobile Home Installers,91,84,57,0
+499096,Riggers,91,84,57,8599.26
+499098,"Helpers--Installation, Maintenance, and Repair Workers",84,96,35,9212.27
+49909X,"Other Installation, Maintenance, and Repair Workers Including Wind Turbine Service Technicians, and Commercial Divers, and Signal and Track Wwitch Repairers",91,84,57,220374.15
+511011,First-Line Supervisors of Production and Operating Workers,56,38,96,783397.1899999998
+512011,"Aircraft Structure, Surfaces, Rigging, and Systems Assemblers",72,72,55,0
+512020,"Electrical, Electronics, and Electromechanical Assemblers",72,72,55,92586.31999999999
+512031,Engine and Other Machine Assemblers,72,72,55,1670.59
+512041,Structural Metal Fabricators and Fitters,71,96,34,27607.89
+512090,Miscellaneous Assemblers and Fabricators,72,72,55,952525.4900000001
+513011,Bakers,24,52,14,208807.2
+513020,"Butchers and Other Meat, Poultry, and Fish Processing Workers",6,41,33,219082.4600000001
+513091,"Food and Tobacco Roasting, Baking, and Drying Machine Operators and Tenders",93,92,9,7334.3
+513092,Food Batchmakers,91,60,76,102886.76
+513093,Food Cooking Machine Operators and Tenders,88,89,64,11434.54
+513099,,,,,168717.72
+514010,Computer Control Programmers and Operators,85,69,85,111311.75
+514021,"Extruding and Drawing Machine Setters, Operators, and Tenders, Metal and Plastic",62,79,59,39662.05
+514022,"Forging Machine Setters, Operators, and Tenders, Metal and Plastic",75,92,92,0
+514023,"Rolling Machine Setters, Operators, and Tenders, metal and Plastic",82,65,85,0
+514031,"Cutting, Punching, and Press Machine Setters, Operators, and Tenders, Metal and Plastic",72,77,80,85777.92
+514032,"Drilling and Boring Machine Tool Setters, Operators, and Tenders, Metal and Plastic",30,64,75,0
+514033,"Grinding, Lapping, Polishing, and Buffing Machine Tool Setters, Operators, and Tenders, Metal and Plastic",96,79,91,28636.37
+514034,"Lathe and Turning Machine Tool Setters, Operators, and Tenders, Metal and Plastic",18,59,34,7222.669999999999
+514041,Machinists,93,75,90,332313.72
+514050,"Metal Furnace Operators, Tenders, Pourers, and Casters",79,66,54,24866.5
+514060,"Model Makers and Patternmakers, Metal and Plastic",90,67,75,0
+514070,"Molders and Molding Machine Setters, Operators, and Tenders, Metal and Plastic",85,93,47,38225.25000000001
+514111,Tool and Die Makers,59,67,52,48879.84999999999
+514120,"Welding, Soldering, and Brazing Workers",61,82,30,558173.9600000001
+514191,"Heat Treating Equipment Setters, Operators, and Tenders, Metal and Plastic",37,54,35,0
+514193,"Plating and Coating Machine Setters, Operators, and Tenders, Metal and Plastic",96,96,84,0
+514194,"Tool Grinders, Filers, and Sharpeners",70,88,91,0
+514XXX,"Miscellaneous metal workers and plastic workers including milling and planing machine setters, and multiple machine tool setters, and lay-out workers",98,79,75,408801.75
+515111,Prepress Technicians and Workers,91,57,99,20096.45
+515112,Printing Machine Operators,97,81,89,152338.98
+515113,Print Binding and Finishing Workers,97,81,89,0
+516011,Laundry and Dry-Cleaning Workers,66,80,63,158184.18
+516021,"Pressers, Textile, Garment, and Related Materials",19,53,21,25955.86
+516031,Sewing Machine Operators,32,74,47,162321.0299999999
+516041,Shoe and Leather Workers and Repairers,2,52,13,7616.68
+516042,Shoe Machine Operators and Tenders,39,69,2,0
+516050,"Tailors, Dressmakers, and Sewers",39,61,57,92646.74000000001
+516063,"Textile Knitting and Weaving Machine Setters, Operators, and Tenders",98,79,100,0
+516064,"Textile Winding, Twisting, and Drawing Out Machine Setters, Operators, and Tenders",98,79,92,27560.44
+51606X,"Textile bleaching and dyeing, and cutting machine setters, operators, and tenders",98,88,98,0
+516093,Upholsterers,75,79,81,10809.65
+51609X,"Miscellaneous textile, apparel, and furnishings workers except upholsterers",93,58,84,14532.78
+517011,Cabinetmakers and Bench Carpenters,44,66,20,70491.53999999999
+517021,Furniture Finishers,7,60,26,8287.51
+517041,"Sawing Machine Setters, Operators, and Tenders, Wood",70,67,43,16540.26
+517042,"Woodworking Machine Setters, Operators, and Tenders, Except Sawing",99,92,91,11181.56
+5170XX,Miscellaneous woodworkers including model makers and patternmakers,90,51,93,21265.63
+518010,"Power Plant Operators, Distributors, and Dispatchers",100,82,100,61681.99
+518021,Stationary Engineers and Boiler Operators,63,59,75,51892.89
+518031,Water and Wastewater Treatment Plant and System Operators,100,69,100,94956.01999999999
+518090,Miscellaneous Plant and System Operators,98,80,92,41154.65
+519010,"Chemical Processing Machine Setters, Operators, and Tenders",96,69,80,52587.3
+519020,"Crushing, Grinding, Polishing, Mixing, and Blending Workers",92,66,33,83468.23999999998
+519030,Cutting Workers,62,78,52,80284.42000000001
+519041,"Extruding, Forming, Pressing, and Compacting Machine Setters, Operators, and Tenders",62,79,59,29664.45
+519051,"Furnace, Kiln, Oven, Drier, and Kettle Operators and Tenders",79,66,54,17208.41
+519061,"Inspectors, Testers, Sorters, Samplers, and Weighers",90,64,98,834374.6999999998
+519071,Jewelers and Precious Stone and Metal Workers,20,64,81,46933.33
+519080,"Medical, Dental, and Ophthalmic Laboratory Technicians",87,91,81,56909.44999999999
+519111,Packaging and Filling Machine Operators and Tenders,39,68,26,275497.67
+519120,Painting Workers,84,92,76,147280.65
+519151,Photographic Process Workers and Processing Machine Operators,74,62,89,10296.94
+519191,Adhesive Bonding Machine Operators and Tenders,50,60,84,11806.67
+519192,"Cleaning, Washing, and Metal Pickling Equipment Operators and Tenders",99,67,93,0
+519194,Etchers and Engravers,72,91,34,6110.68
+519195,"Molders, Shapers, and Casters, Except Metal and Plastic",44,67,25,44859.14
+519196,"Paper Goods Machine Setters, Operators, and Tenders",75,67,77,16485.7
+519197,Tire Builders,88,89,64,1824.24
+519198,Helpers--Production Workers,63,83,24,49675.43
+5191XX,Other production workers including semiconductor processors and cooling and freezing equipment operators,88,89,64,1108508.87
+531000,Supervisors of motor vehicle transportation,47,64,45,254413.78
+532010,Aircraft Pilots and Flight Engineers,66,59,80,182537.44
+532020,Air Traffic Controllers and Airfield Operations Specialists,62,33,29,43115.99000000001
+532031,Flight Attendants,7,75,7,127911.93
+533011,"Ambulance Drivers and Attendants, Except Emergency Medical Technicians",62,79,14,0
+533020,Bus Drivers,83,92,45,555417.97
+533030,Driver/Sales Workers and Truck Drivers,75,85,35,3431473.909999999
+533041,Taxi Drivers and Chauffeurs,71,89,46,636073.4500000001
+533099,,,,,190551.15
+534010,Locomotive Engineers and Operators,100,97,100,58357.83
+534021,"Railroad Brake, Signal, and Switch Operators",92,84,67,0
+534031,Railroad Conductors and Yardmasters,30,77,34,48451.42
+5340XX,Locomotive operators: engineers and firemen,100,97,100,5629.43
+535020,Ship and Boat Captains and Operators,79,80,91,30356.89
+5350XX,"Sailors and marine oilers, and ship engineers",64,69,21,31003.22
+536021,Parking Lot Attendants,100,77,92,91967.00999999999
+536031,Automotive and Watercraft Service Attendants,26,81,25,107864.32
+536051,Transportation Inspectors,90,64,98,43658.16
+536061,"Transportation Attendants, Except Flight Attendants",7,75,7,0
+5360XX,Miscellaneous transportation workers including bridge and lock tenders and traffic technicians,98,93,93,36419.19
+537021,Crane and Tower Operators,98,96,89,66389.48
+537030,"Dredge, Excavating, and Loading Machine Operators",99,96,83,0
+537051,Industrial Truck and Tractor Operators,96,100,64,485887.87
+537061,Cleaners of Vehicles and Equipment,39,80,20,369735.0100000001
+537062,"Laborers and Freight, Stock, and Material Movers, Hand",85,94,49,2116212.46
+537063,Machine Feeders and Offbearers,99,96,34,13700.1
+537064,"Packers and Packagers, Hand",100,97,92,713565.0299999997
+537070,Pumping Station Operators,99,91,59,22108.79
+537081,Refuse and Recyclable Material Collectors,93,96,53,98905.34
+5370XX,"Conveyor operators and tenders, and hoist and winch operators",99,96,93,25791.32
+5371XX,"Miscellaneous material moving workers including shuttle car operators, and tank car, truck, and ship loaders",99,91,59,56651.71
+551010,,,,,0
+552010,,,,,0
+553010,,,,,0
+559830,,,,,15727.93
+999920,,,,,0

@@ -26,7 +26,7 @@ cd "/Users/lucaskitzmueller/Documents/04_Master/10_Courses/29_Data Visualization
 	recode labforce 2 = 1 nonmissing = . ,gen(labforce2)
 	
 	* Collapse
-	collapse (count) number_workers = asecwth number_workers2 = labforce2  [pweight = asecwth], by(statefip occ) fast
+	collapse (count) number_workers = asecwth number_workers2 = labforce2  [pweight = asecwth], by(statefip occ2010) fast
 	drop number_workers2 // was just consistency check
 	
 	* Consistency check
@@ -65,20 +65,72 @@ cd "/Users/lucaskitzmueller/Documents/04_Master/10_Courses/29_Data Visualization
 	assert `r(N)' == 3
 	drop if missing(soccode)
 	
-	* Dataset is now on the level of O*NET SOC code.
+	* Create 6-sigit ACS code
 	gen soccode_6digits = substr(soccode,1,7) // for merging
-	unique soccode
+	replace soccode_6digits = subinstr(soccode_6digits, "-", "",.)
+	unique soccode_6digits
 	
 	* Collapse to the level of 6 digit soccode
-	collapse (mean) webb_pct_software webb_pct_robot webb_pct_ai webb_lswt2010 (first) webb_occ webb_acs webb_acs_title soccode webb_onet_name webb_occ1990dd webb_occ1990dd_title , by(soccode_6digits)
+	*collapse (mean) webb_pct_software webb_pct_robot webb_pct_ai webb_lswt2010 (first) webb_occ webb_acs webb_acs_title soccode webb_onet_name webb_occ1990dd webb_occ1990dd_title , by(soccode_6digits)	
+	
+	* Collapse to the level of ACS code in weeb
+	collapse (mean) webb_pct_software webb_pct_robot webb_pct_ai webb_lswt2010 (first) webb_occ soccode_6digits webb_acs_title soccode webb_onet_name webb_occ1990dd webb_occ1990dd_title , by(webb_acs)
+	replace webb_acs_title = webb_occ1990dd_title if mi(webb_acs_title)
+	rename webb_acs acscode
 	
 	tempfile webb
 	save `webb'
 	
 *-------------------------------------------------------------------------------*
-* Merge datasets – EMPLOYMENT NUMBERS MASTER
+* Merge datasets: Employment and Occupation Risk
 *-------------------------------------------------------------------------------*
 
+	* Open crosswalk: CPS OCC2010 - ACS code
+	import excel "occ_occsoc_crosswalk_2000_onward.xlsx", sheet("Sheet1") firstrow case(lower) clear
+	drop if missing(acscode)
+	tempfile cw_acs_soc
+	save `cw_acs_soc'
+	
+	* Open CPS data and merge in crosswalk on CPS code
+	use `cps', clear
+	rename occ2010 cpscode
+	merge m:1 cpscode using `cw_acs_soc', gen(_merge_cw)
+	* br if _merge_cw == 1
+	* the only ones that don't merge from master are NIU so all good.
+	
+	*drop if _merge_cw == 2
+
+	* Now use ACS code to merge in Webb data
+	*rename soccode soccode_6digits
+	merge m:1 acscode using `webb', gen(_merge_webb)
+	* Some occupations included in the CPS data are not in the Webb data – which is fine
+	
+	tempfile master
+	save `master'
+	
+*-------------------------------------------------------------------------------*
+* Create state level data with aggregate AI automation risk
+*-------------------------------------------------------------------------------*
+
+	drop if cpscode == 9999 // drop people not in workforce
+	
+	*drop if state != 25 
+	*br if !mi(webb_pct_ai)
+		
+	*collapse (mean) webb_pct_software webb_pct_robot webb_pct_ai, by(acscode webb_acs_title) 
+	collapse (mean) webb_pct_software webb_pct_robot webb_pct_ai [pweight = number_workers], by(statefip)
+	
+	export delimited using "state_risk.csv", replace
+	
+*-------------------------------------------------------------------------------*
+* Create occupation level data with AI automation risk
+*-------------------------------------------------------------------------------*
+	
+	use `master', clear
+	
+	collapse (mean) webb_pct_software webb_pct_robot webb_pct_ai  (sum) number_workers, by(acscode webb_acs_title)
+
+	export delimited using "occupat_risk.csv", replace
 
 	
 	exit 
