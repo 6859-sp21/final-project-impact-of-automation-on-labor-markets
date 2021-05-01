@@ -137,10 +137,11 @@ cd "/Users/lucaskitzmueller/Documents/04_Master/10_Courses/29_Data Visualization
 	by statefip: gen rank = _n
 	keep statefip number_workers webb_pct* acscode rank webb_acs_title
 	reshape wide acscode webb_acs_title number_workers webb_pct* , i(statefip) j(rank)  
-	exit 
+	
 	
 	export delimited using "state_risk.csv", replace
-	 
+	exit 
+	
 *-------------------------------------------------------------------------------*
 * Create occupation level data with AI automation risk
 *-------------------------------------------------------------------------------*
