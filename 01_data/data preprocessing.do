@@ -76,7 +76,6 @@ cd "/Users/lucaskitzmueller/Documents/04_Master/10_Courses/29_Data Visualization
 	tempfile webb_raw
 	save `webb_raw'
 	
-	
 	* Collapse to the level of ACS code in weeb
 	collapse (mean) webb_pct_software webb_pct_robot webb_pct_ai webb_lswt2010 (first) webb_occ soccode_6digits webb_acs_title soccode webb_onet_name webb_occ1990dd webb_occ1990dd_title , by(webb_acs)
 	replace webb_acs_title = webb_occ1990dd_title if mi(webb_acs_title)
@@ -102,7 +101,7 @@ cd "/Users/lucaskitzmueller/Documents/04_Master/10_Courses/29_Data Visualization
 	* br if _merge_cw == 1
 	* the only ones that don't merge from master are NIU so all good.
 	 
-	drop if _merge_cw == 2
+	drop if _merge_cw == 2 // flag! these are the ones that later don't merge
 
 	* Now use ACS code to merge in Webb data
 	*rename soccode soccode_6digits
@@ -116,16 +115,32 @@ cd "/Users/lucaskitzmueller/Documents/04_Master/10_Courses/29_Data Visualization
 * Create state level data with aggregate AI automation risk
 *-------------------------------------------------------------------------------*
 
+	use `master', clear
+
 	drop if cpscode == 9999 // drop people not in workforce (these are people without automation info)
 	
 	*drop if state != 25 
-	*br if !mi(webb_pct_ai)
+	*br if !mi(webb_pct_ai) 	
 		
 	*collapse (mean) webb_pct_software webb_pct_robot webb_pct_ai, by(acscode webb_acs_title) 
 	collapse (mean) webb_pct_software webb_pct_robot webb_pct_ai [pweight = number_workers], by(statefip)
 	
+	tempfile collapsed
+	save `collapsed'
+	
+	* get top 5 occupations by state
+	use `master', clear
+	gsort statefip -number_workers
+	drop if missing(webb_acs_title) // these are the ones where I couldn't merge to WEBB data
+	
+	by statefip : keep if _n <= 5
+	by statefip: gen rank = _n
+	keep statefip number_workers webb_pct* acscode rank webb_acs_title
+	reshape wide acscode webb_acs_title number_workers webb_pct* , i(statefip) j(rank)  
+	exit 
+	
 	export delimited using "state_risk.csv", replace
-
+	 
 *-------------------------------------------------------------------------------*
 * Create occupation level data with AI automation risk
 *-------------------------------------------------------------------------------*
@@ -167,6 +182,9 @@ cd "/Users/lucaskitzmueller/Documents/04_Master/10_Courses/29_Data Visualization
 	use `alread_merged', clear
 	append using `second_merge'
 	export delimited using "occupat_risk.csv", replace
+	
+	bysort typicalentryleveleducation: su webb_pct_ai 
+	bysort typicalentryleveleducation: su webb_pct_robot 
 	
 	exit 
 	
