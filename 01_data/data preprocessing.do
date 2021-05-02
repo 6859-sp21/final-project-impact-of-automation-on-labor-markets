@@ -202,18 +202,41 @@ cd "/Users/lucaskitzmueller/Documents/04_Master/10_Courses/29_Data Visualization
 		*tostring webb_pct_ai_group, replace
 	}
 	
-	bysort typicalentryleveleducation: gen n = _n 
-	replace typicalentryleveleducation = "" if n != 1
-	gen children__colname = "level2" if n == 1
-	gen name = "CEO" if _n == 1
-	rename employment2019 children__children__value
-	rename webb_* children__children__*
-	rename occupationtitle children__children__name
-	rename typicalentryleveleducation children__name
+	* shorten occupation title:
+	replace occupationtitle = substr(occupationtitle, 1, strpos(occupationtitle, "*") - 1)  if strpos(occupationtitle, "*") 
 	
-	drop n
-	export delimited using "../07_treemap chart/occupat_risk_to_convert_to_json.csv", replace
-	* https://json-csv.com/
+	* number of workers
+	replace employment2019 = employment2019 * 1000
+	
+	* Aggregate degrees
+	replace typicalentryleveleducation = "Doctoral or Master's degree" if typicalentryleveleducation == "Doctoral or professional degree"
+	replace typicalentryleveleducation = "Doctoral or Master's degree" if typicalentryleveleducation == "Master's degree"
+		replace typicalentryleveleducation = "Some college" if typicalentryleveleducation == "Some college no degree" 
+	
+	
+	* create 3 variables for coloring
+	save `master', replace
+	local i 0
+	foreach var of varlist webb_pct*_g {
+		use `master', clear
+		gen children__children__coloring = `var'
+		label values children__children__coloring group
+		
+		bysort typicalentryleveleducation: gen n = _n 
+		replace typicalentryleveleducation = "" if n != 1
+		gen children__colname = "level2" if n == 1
+		gen name = "CEO" if _n == 1
+		rename employment2019 children__children__value
+		rename webb_* children__children__*
+		rename occupationtitle children__children__name
+		rename typicalentryleveleducation children__name
+		drop n
+		export delimited using "../07_treemap chart/data_`var'.csv", replace
+		* https://json-csv.com/
+		local ++i
+	}
+	
+
 	
 	exit 
 	
