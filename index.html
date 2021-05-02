@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Minimal HTML head elements -->
+    <meta charset="utf-8" />
+    <title>PSR B1919+21</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dist/squaire.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <!-- Title of the page -->
+    <h1>PSR B1919+21</h1>
+
+    <div class="toggle-data-buttons">
+        <button type="button" autocomplete="off" class="btn btn-default btn-primary"
+            data-index="webb_pct_software">webb_pct_software</button>
+        <button type="button" autocomplete="off" class="btn btn-default"
+            data-index="webb_pct_robot">webb_pct_robot</button>
+        <button type="button" autocomplete="off" class="btn btn-default" data-index="webb_pct_ai">webb_pct_ai</button>
+    </div>
+    <div class="legend legend-horizontal legend-scale"></div>
+
+    <div id="custom-tooltip"></div>
+    <div id="custom-tooltip-toolbox" class="squaire-toolbox"></div>
+
+
+    <!-- <script type="text/javascript">
+        var data = {
+            "NY": { "value": "$4" },
+            "AL": { "value": "$1" }
+        };
+        var map = new Squaire(data, {
+            colors: d3.scale.quantize().domain([1, 5]).range(['#c9e2f5', '#0098db'])
+        });
+    </script> -->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+    <script src="dist/squaire.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
