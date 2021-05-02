@@ -1,4 +1,6 @@
 <!-- Code from d3-graph-gallery.com -->
+
+
 <!DOCTYPE html>
 <meta charset="utf-8">
 
@@ -10,6 +12,8 @@
 
 
 <script>
+
+// code base from here https://www.d3-graph-gallery.com/graph/treemap_custom.html 
 
 // set the dimensions and margins of the graph
 var margin = {top: 10, right: 10, bottom: 10, left: 10},
@@ -26,7 +30,7 @@ var svg = d3.select("#my_dataviz")
         "translate(" + margin.left + "," + margin.top + ")");
 
 // read json data
-d3.json("/ourdata.json", function(data) {
+d3.json("/ourdatav2.json", function(data) {
 
   // Give the data to this cluster layout:
   var root = d3.hierarchy(data).sum(function(d){ return d.value}) // Here the size of each leave is given in the 'value' field in input data
@@ -46,6 +50,14 @@ d3.json("/ourdata.json", function(data) {
     .domain(["boss1", "boss2", "boss3"])
     .range([ "#402D54", "#D18975", "#8FD175"])
 
+  // prepare a color scale
+  var color2 = d3.scaleOrdinal()
+    .domain(["very low", "low", "low to medium",  "medium to high",  "high", "very high"])
+    .range([ "#c82538", "#b13433", "#8d472b", "#675e24", "#45731e", "#2e7f18"])
+
+
+// https://www.schemecolor.com/green-to-red-gradient.php
+
   // And a opacity scale
   var opacity = d3.scaleLinear()
     .domain([10, 30])
@@ -62,7 +74,7 @@ d3.json("/ourdata.json", function(data) {
       .attr('width', function (d) { return d.x1 - d.x0; })
       .attr('height', function (d) { return d.y1 - d.y0; })
       .style("stroke", "black")
-      .style("fill", function(d){ return color(d.parent.data.name)} )
+      .style("fill", function(d){ return color2(d.data.pct_robot_g)} )
       .style("opacity", function(d){ return opacity(d.data.value)})
 
   // and to add the text labels

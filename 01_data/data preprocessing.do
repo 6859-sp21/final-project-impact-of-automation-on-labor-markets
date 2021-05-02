@@ -145,7 +145,7 @@ cd "/Users/lucaskitzmueller/Documents/04_Master/10_Courses/29_Data Visualization
 * Create occupation level data with AI automation risk
 *-------------------------------------------------------------------------------*
 	
-	* https://data.bls.gov/projections/occupationProj
+	* https://data.bls.gov/projections/occupationProj 
 	import delimited "Employment Projections.csv", stripquote(yes) clear 
 	rename occupationcode	soccode_6digits
 	replace soccode_6digits = subinstr(soccode_6digits, "-", "",.)
@@ -194,6 +194,14 @@ cd "/Users/lucaskitzmueller/Documents/04_Master/10_Courses/29_Data Visualization
 	order typicalentryleveleducation occupationtitle employment
 	sort typicalentryleveleducation occupationtitle employment
 	
+	rename webb_pct_software webb_pct_sw
+	label define group 1  "very low" 2  "low" 3  "low to medium" 4 "medium to high" 5  "high" 6  "very high" 
+	foreach var of varlist webb_pct* {
+		recode `var' 0/16 = 1 17/33 = 2 33/50 = 3 51/66 = 4 67/83= 5 84/100 = 6, gen(`var'_g)
+		label values `var'_g group 
+		*tostring webb_pct_ai_group, replace
+	}
+	
 	bysort typicalentryleveleducation: gen n = _n 
 	replace typicalentryleveleducation = "" if n != 1
 	gen children__colname = "level2" if n == 1
@@ -202,9 +210,10 @@ cd "/Users/lucaskitzmueller/Documents/04_Master/10_Courses/29_Data Visualization
 	rename webb_* children__children__*
 	rename occupationtitle children__children__name
 	rename typicalentryleveleducation children__name
+	
 	drop n
 	export delimited using "../07_treemap chart/occupat_risk_to_convert_to_json.csv", replace
-
+	* https://json-csv.com/
 	
 	exit 
 	
