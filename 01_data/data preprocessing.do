@@ -140,7 +140,6 @@ cd "/Users/lucaskitzmueller/Documents/04_Master/10_Courses/29_Data Visualization
 	
 	
 	export delimited using "state_risk.csv", replace
-	exit 
 	
 *-------------------------------------------------------------------------------*
 * Create occupation level data with AI automation risk
@@ -176,7 +175,7 @@ cd "/Users/lucaskitzmueller/Documents/04_Master/10_Courses/29_Data Visualization
 		merge m:m soccode_4digits using `webb_raw', gen(_merge_webb_2) update
 		keep if _merge_webb_2 == 5  | _merge_webb_2==1
 		unique soccode_6digits
-		collapse (mean) webb_pct_software webb_pct_robot webb_pct_ai webb_lswt2010 employment2019 employmentpercentchange20192029 occupationalopenings20192029annu medianannualwage2020 (first) typicalentryleveleducation educationcode workexperienceinarelatedoccupati workexcode typicalonthejobtraining, by(soccode_6digits)
+		collapse (mean) webb_pct_software webb_pct_robot webb_pct_ai webb_lswt2010 employment2019 employmentpercentchange20192029 occupationalopenings20192029annu medianannualwage2020 (first) occupationtitle typicalentryleveleducation educationcode workexperienceinarelatedoccupati workexcode typicalonthejobtraining, by(soccode_6digits)
 		tempfile second_merge
 		save `second_merge'
 	
@@ -186,9 +185,28 @@ cd "/Users/lucaskitzmueller/Documents/04_Master/10_Courses/29_Data Visualization
 	
 	bysort typicalentryleveleducation: su webb_pct_ai 
 	bysort typicalentryleveleducation: su webb_pct_robot 
+
+*-------------------------------------------------------------------------------*
+* Format for json reshape
+*-------------------------------------------------------------------------------* 
+	
+	keep occupationtitle employment2019 typicalentryleveleducation webb_pct_software webb_pct_robot webb_pct_ai
+	order typicalentryleveleducation occupationtitle employment
+	sort typicalentryleveleducation occupationtitle employment
+	
+	bysort typicalentryleveleducation: gen n = _n 
+	replace typicalentryleveleducation = "" if n != 1
+	gen children__colname = "level2" if n == 1
+	gen name = "CEO" if _n == 1
+	rename employment2019 children__children__value
+	rename webb_* children__children__*
+	rename occupationtitle children__children__name
+	rename typicalentryleveleducation children__name
+	drop n
+	export delimited using "../07_treemap chart/occupat_risk_to_convert_to_json.csv", replace
+
 	
 	exit 
-	
 	
 *-------------------------------------------------------------------------------*
 * Create occupation level data with AI automation risk
