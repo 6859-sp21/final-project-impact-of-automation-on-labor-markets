@@ -137,7 +137,12 @@ cd "/Users/lucaskitzmueller/Documents/04_Master/10_Courses/29_Data Visualization
 	by statefip: gen rank = _n
 	keep statefip number_workers webb_pct* acscode rank webb_acs_title
 	reshape wide acscode webb_acs_title number_workers webb_pct* , i(statefip) j(rank)  
+	tempfile top_occu
+	save `top_occu', replace
 	
+	use `collapsed', clear
+	merge 1:1 statefip using `top_occu', gen(_merge_top_occu)
+
 	
 	export delimited using "state_risk.csv", replace
 	
@@ -211,7 +216,8 @@ cd "/Users/lucaskitzmueller/Documents/04_Master/10_Courses/29_Data Visualization
 	* Aggregate degrees
 	replace typicalentryleveleducation = "Doctoral or Master's degree" if typicalentryleveleducation == "Doctoral or professional degree"
 	replace typicalentryleveleducation = "Doctoral or Master's degree" if typicalentryleveleducation == "Master's degree"
-		replace typicalentryleveleducation = "Some college" if typicalentryleveleducation == "Some college no degree" 
+		replace typicalentryleveleducation = "Some college" if typicalentryleveleducation == "Some college no degree"
+ 
 	
 	
 	* create 3 variables for coloring
