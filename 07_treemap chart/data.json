@@ -1,0 +1,76 @@
+{
+	"children": [{
+			"name": "boss1",
+			"children": [{
+					"name": "mister_a",
+					"value": 28,
+					"colname": "level3"
+				},{
+					"name": "mister_b",
+					"value": 19,
+					"colname": "level3"
+				},{
+					"name": "mister_c",
+					"value": 18,
+					"colname": "level3"
+				},{
+					"name": "mister_d",
+					"value": 19,
+					"colname": "level3"
+				}
+			],
+			"colname": "level2"
+		},{
+			"name": "boss2",
+			"children": [{
+					"name": "mister_e",
+					"value": 14,
+					"colname": "level3"
+				},{
+					"name": "mister_f",
+					"value": 11,
+					"colname": "level3"
+				},{
+					"name": "mister_g",
+					"value": 15,
+					"colname": "level3"
+				},{
+					"name": "mister_h",
+					"value": 16,
+					"colname": "level3"
+				}
+			],
+			"colname": "level2"
+		},{
+			"name": "boss3",
+			"children": [{
+					"name": "mister_i",
+					"value": 10,
+					"colname": "level3"
+				},{
+					"name": "mister_j",
+					"value": 13,
+					"colname": "level3"
+				},{
+					"name": "mister_k",
+					"value": 13,
+					"colname": "level3"
+				},{
+					"name": "mister_l",
+					"value": 25,
+					"colname": "level3"
+				},{
+					"name": "mister_m",
+					"value": 16,
+					"colname": "level3"
+				},{
+					"name": "mister_n",
+					"value": 28,
+					"colname": "level3"
+				}
+			],
+			"colname": "level2"
+		}
+	],
+	"name": "CEO"
+}
