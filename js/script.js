@@ -70,7 +70,7 @@
         //     "AL": { "value": "$1" }
         // };
         // var quickMap = new Squaire(quickData, {
-        //     colors: d3.scale.quantize().domain([1, 5]).range(['#c9e2f5', '#0098db'])
+        //     colors: d3v3.scale.quantize().domain([1, 5]).range(['#c9e2f5', '#0098db'])
         // });
 
 
@@ -87,19 +87,20 @@
             var values = Object.keys(tooltipData).map(function (key) {
                 return tooltipData[key][index];
             });
-            return d3.extent(values, function (d) { return +d.replace(/[^\d-\.]/gi, ''); });
+            console.log(values);
+            return d3v3.extent(values, function (d) { return +d.replace(/[^\d-\.]/gi, ''); });
         }
 
         //get max/min of values in bar chart
         function getBarExtent() {
             var repExtent = getExtent("Representatives"),
                 electoralExtent = getExtent("Electoral Votes");
-            return [d3.min([repExtent[0], electoralExtent[0]]), d3.max([repExtent[1], electoralExtent[1]])];
+            return [d3v3.min([repExtent[0], electoralExtent[0]]), d3v3.max([repExtent[1], electoralExtent[1]])];
         }
 
         function updateLegend(extent, colors, index) {
-            var commaFormat = d3.format(",f0"),
-                unit = index === "Population" ? " people" : " square miles",
+            var commaFormat = d3v3.format(",f0"),
+                unit = index === "Population" ? " people" : " risk score",
                 html = '<span class="legend-value">' + commaFormat(extent[0]) + '</span>';
             html += colors.map(function (color, i) {
                 return '<span class="legend-box" style="background-color:' + color + ';"></span>';
@@ -111,14 +112,14 @@
         function getTooltipColorScale(index) {
             var extent = getExtent(index),
                 colors = ['#e6eff9', '#c9e2f5', '#95cbee', '#0098db', '#0079ae'],
-                colorScale = d3.scale.quantize()
+                colorScale = d3v3.scale.quantize()
                     .domain(extent)
                     .range(colors);
             updateLegend(extent, colors, index);
             return colorScale;
         }
 
-        d3.csv("https://raw.githubusercontent.com/6859-sp21/final-project-impact-of-automation-on-labor-markets/main/01_data/state_risk.csv", function (r) {
+        d3v3.csv("https://raw.githubusercontent.com/6859-sp21/final-project-impact-of-automation-on-labor-markets/main/01_data/state_risk.csv", function (r) {
             // write values to object using id as proprety name
             // id is the column name in the spreadsheet that maps to the layout and labels -- U.S. state two-letter abbreviations in default squaire.js settings
             tooltipData[state_abbr[r.statefip]] = r;
@@ -127,6 +128,7 @@
             return r;
         }, function (csv) {
             //callback when file loaded and data formatted
+            delete tooltipData[undefined];
             tooltipColors = getTooltipColorScale(tooltipIndex);
             // tooltipRepresentativesExtent = getBarExtent();
             //init map
@@ -164,6 +166,16 @@
                     html += '<tr><td>' + column + '</td><td>' + data + '</td></tr>';
                 }
             });
+
+            // the list of top jobs
+            html += '<tr><td>' + 'Top At-Risk Jobs' + '</td><td></td></tr>'
+            html += '<tr><td>' + d.data['webb_acs_title1'] + '</td><td>' + d.data['number_workers1'] + '</td></tr>'
+            html += '<tr><td>' + d.data['webb_acs_title2'] + '</td><td>' + d.data['number_workers2'] + '</td></tr>'
+            html += '<tr><td>' + d.data['webb_acs_title3'] + '</td><td>' + d.data['number_workers3'] + '</td></tr>'
+            html += '<tr><td>' + d.data['webb_acs_title4'] + '</td><td>' + d.data['number_workers4'] + '</td></tr>'
+            html += '<tr><td>' + d.data['webb_acs_title5'] + '</td><td>' + d.data['number_workers5'] + '</td></tr>'
+
+
             html += '</table>';
             html += '<table class="table table-bar hang">';
             bars.forEach(function (item) {
@@ -238,7 +250,7 @@
         //     labelStyle: "full",
         //     index: "Direction",
         //     indexType: "string",
-        //     colors: d3.scale.ordinal(["Longitude", "Latitude"]).range(["#c9e2f5", "#c6e2ba"]),
+        //     colors: d3v3.scale.ordinal(["Longitude", "Latitude"]).range(["#c9e2f5", "#c6e2ba"]),
         //     tooltip: {
         //         enabled: true,
         //         mode: "static",

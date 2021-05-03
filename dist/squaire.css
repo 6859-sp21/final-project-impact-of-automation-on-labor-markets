@@ -56,7 +56,7 @@
   box-shadow: 0;
   border: 1px solid #a8a7a5;
   padding: 8px;
-  max-width: 200px;
+  max-width: 300px;
 }
 .squaire-tooltip:after, .squaire-tooltip:before {
   top: 100%;

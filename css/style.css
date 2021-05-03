@@ -2,6 +2,11 @@
 
 /* CUSTOM TOOLTIP */
 
+.block-map {
+	width:65%;
+	margin: auto;
+}
+
 .table-header {
       text-transform: uppercase;
       font-size: 10px;
