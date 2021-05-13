@@ -10,10 +10,18 @@
     <link rel="stylesheet" href="dist/squaire.css" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/linechart.css" />
 </head>
 
 <body>
     <!-- Title of the page -->
+
+
+    <section class="wrapper style1 inner">
+        <h2>Line Chart</h2>
+        <div id="linechart-box"></div>
+        <div id="linechart-year"></div>
+    </section>
 
     <section class="wrapper style1 inner block-map">
         <h2>The Geographical Distribution of Automation Risk</h2>
@@ -42,15 +50,6 @@
         <div id="my_dataviz"></div>
     </section>
 
-    <!-- <script type="text/javascript">
-        var data = {
-            "NY": { "value": "$4" },
-            "AL": { "value": "$1" }
-        };
-        var map = new Squaire(data, {
-            colors: d3.scale.quantize().domain([1, 5]).range(['#c9e2f5', '#0098db'])
-        });
-    </script> -->
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -68,6 +67,7 @@
     <script src="dist/squaire.js"></script>
     <script src="js/script.js"></script>
     <script src="js/treemap.js"></script>
+    <script src="js/linechart.js"></script>
 </body>
 
 </html>

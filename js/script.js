@@ -87,7 +87,7 @@
             var values = Object.keys(tooltipData).map(function (key) {
                 return tooltipData[key][index];
             });
-            console.log(values);
+            // console.log(values);
             return d3v3.extent(values, function (d) { return +d.replace(/[^\d-\.]/gi, ''); });
         }
 
@@ -132,7 +132,7 @@
             tooltipColors = getTooltipColorScale(tooltipIndex);
             // tooltipRepresentativesExtent = getBarExtent();
             //init map
-            console.log(tooltipData);
+            // console.log(tooltipData);
             tooltipMap = new Squaire(tooltipData, {
                 el: "#custom-tooltip",
                 index: tooltipIndex,

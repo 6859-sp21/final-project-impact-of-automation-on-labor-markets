@@ -117,7 +117,7 @@ function update(data_path) {
             .attr('height', function (d) { return d.y1 - d.y0; })
             .style("stroke", "black")
             .style("fill", function (d) {
-                console.log(d.data);
+                // console.log(d.data);
                 return color2(d.data.coloring);
             })
             .style("opacity", function (d) { return opacity(d.data.value) })
