@@ -31,10 +31,10 @@
 
 	<script>
 
+	// templates used:
 	// interactivity: https://www.d3-graph-gallery.com/graph/density_filter.html 
-	// https://www.d3-graph-gallery.com/graph/ridgeline_basic.html 
 	// https://www.d3-graph-gallery.com/graph/ridgeline_template.html added color
-	// https://observablehq.com/@ben-tanen/the-relentless-2020-news-cycle-in-one-chart 
+
 
 
 	// set the dimensions and margins of the graph
@@ -166,7 +166,7 @@
 	      allDensity.push({key: key, density: density})
 	  }
 
-	    // update the chart
+	    // update the chart // from code example 
 	    //curve
 	    //  .datum(density)
 	    //  .transition()
@@ -176,26 +176,33 @@
 	    //      .x(function(d) { return x(d[0]); })
 	    //      .y(function(d) { return y(d[1]); })
 	    //  );
-	  curve = svg.selectAll("areas")
-	    .data(allDensity)
-	    .enter()
-	    .append("path")
-	      .attr("transform", function(d){return("translate(0," + (yName(d.key)-height) +")" )})
-	      .attr("fill", function(d){
-	        grp = d.key ;
-	        index = categories.indexOf(grp)
-	        value = allMeans[index]
-	        return myColor( value  )
-	      })
-	      .datum(function(d){return(d.density)})
-	      .attr("opacity", 0.7)
-	      .attr("stroke", "#000")
-	      .attr("stroke-width", 0.1)
-	      .attr("d",  d3.line()
-	          .curve(d3.curveBasis)
-	          .x(function(d) { return x(d[0]); })
-	          .y(function(d) { return y(d[1]); })
-	      )
+	  //curve = svg.selectAll("areas")
+	  //  .data(allDensity)
+
+	  //curve.exit().remove()
+
+	  curve
+	  	.data(allDensity)
+	    //.enter()
+	    //.append("path")
+      .attr("transform", function(d){return("translate(0," + (yName(d.key)-height) +")" )})
+      .attr("fill", function(d){
+        grp = d.key ;
+        index = categories.indexOf(grp)
+        value = allMeans[index]
+        return myColor( value  )
+      })
+      .datum(function(d){return(d.density)})
+      .transition()
+      .duration(1000)
+      .attr("opacity", 0.7)
+      .attr("stroke", "#000")
+      .attr("stroke-width", 0.1)
+      .attr("d",  d3.line()
+          .curve(d3.curveBasis)
+          .x(function(d) { return x(d[0]); })
+          .y(function(d) { return y(d[1]); })
+      )
 
 	  }
 
