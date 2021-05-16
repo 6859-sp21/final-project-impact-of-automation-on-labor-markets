@@ -189,11 +189,104 @@ cd "/Users/lucaskitzmueller/Documents/04_Master/10_Courses/29_Data Visualization
 	export delimited using "occupat_risk.csv", replace
 	
 	bysort typicalentryleveleducation: su webb_pct_ai 
-	bysort typicalentryleveleducation: su webb_pct_robot 
+	bysort typicalentryleveleducation: su webb_pct_robot
+	
+	/*levelsof typicalentryleveleducation, local(levels) 
+	foreach l of local levels {
+		kdensity webb_pct_robot if typicalentryleveleducation == "`l'", xsc(r(0 100))
+		graph export "../08_ridgeline/exploration/robot_`l'.pdf", replace
+		}	
+	levelsof typicalentryleveleducation, local(levels) 
+	foreach l of local levels {
+		kdensity webb_pct_ai if typicalentryleveleducation == "`l'", xsc(r(0 100))
+		graph export "../08_ridgeline/exploration/ai_`l'.pdf", replace
+		}
+	*/
+	tempfile master
+	save `master', replace
 
+*-------------------------------------------------------------------------------*
+* Format for ridgeline plot
+*-------------------------------------------------------------------------------* 
+	
+	keep occupationtitle typicalentryleveleducation webb_pct_software webb_pct_robot webb_pct_ai employment2019
+	order typicalentryleveleducation occupationtitle 
+	sort typicalentryleveleducation occupationtitle 
+		
+	* Aggregate degrees
+	replace typicalentryleveleducation = "Doctoral or Master's degree" if typicalentryleveleducation == "Doctoral or professional degree"
+	replace typicalentryleveleducation = "Doctoral or Master's degree" if typicalentryleveleducation == "Master's degree"
+	replace typicalentryleveleducation = "Some college or postsecondary nondegree" if typicalentryleveleducation == "Some college no degree"
+	replace typicalentryleveleducation = "Some college or postsecondary nondegree" if typicalentryleveleducation == "Postsecondary nondegree award"
+ 
+	*bysort typicalentryleveleducation: gen rank = _n 
+	drop if missing(webb_pct_ai)
+	gen id = _n
+	reshape long webb_pct_, i(id) j(j) string
+	encode typicalentryleveleducation, gen(ed)
+	encode j, gen(risk)
+	tab risk
+	tab risk, nolabel
+	tab ed
+	tab ed, nolabel
+	drop typicalentryleveleducation j id 
+	bysort ed: gen n = _n 
+	
+	tempfile ridge 
+	save `ridge'
+	
+	levelsof ed, local(levels_ed) 
+	foreach l of local levels_ed {
+		levelsof risk, local(levels_risk) 
+		foreach r of local levels_risk {
+			use `ridge', clear
+			keep if ed == `l'
+			keep if risk == `r'
+			gsample 300 [aw=employment2019]
+			keep webb_pct_
+			tempfile d_`l'_`r'
+			save `d_`l'_`r''
+		}		
+		use `d_`l'_1', clear
+		gen risk = 1
+		append using `d_`l'_2'
+		replace risk = 2 if mi(risk)
+		append using `d_`l'_2'
+		replace risk = 3 if mi(risk)
+		gen n = _n
+		rename webb_pct_ pct_`l'
+		tempfile d_`l'
+		save `d_`l''
+		use `ridge', clear
+	}	
+	use `d_1', clear
+	merge 1:1 n using `d_2', gen(_merge_2)
+	merge 1:1 n using `d_3', gen(_merge_3)
+	merge 1:1 n using `d_4', gen(_merge_4)
+	merge 1:1 n using `d_5', gen(_merge_5)	
+	merge 1:1 n using `d_6', gen(_merge_6)
+	order risk 
+	drop n
+	drop _merge*
+	keep if risk == 1
+	export delimited using "../08_ridgeline/data.csv", replace
+
+	
+	exit 
+
+	/*
+	exit 
+	reshape wide webb_pct_, i(n j) j(ed) 
+	*reshape long 
+	drop n 
+	export delimited using "../08_ridgeline/data.csv", replace
+	exit 
+	*/
+	
 *-------------------------------------------------------------------------------*
 * Format for json reshape
 *-------------------------------------------------------------------------------* 
+	use `master', clear
 	
 	keep occupationtitle employment2019 typicalentryleveleducation webb_pct_software webb_pct_robot webb_pct_ai
 	order typicalentryleveleducation occupationtitle employment
