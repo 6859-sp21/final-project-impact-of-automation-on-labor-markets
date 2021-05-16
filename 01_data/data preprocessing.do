@@ -251,7 +251,7 @@ cd "/Users/lucaskitzmueller/Documents/04_Master/10_Courses/29_Data Visualization
 		gen risk = 1
 		append using `d_`l'_2'
 		replace risk = 2 if mi(risk)
-		append using `d_`l'_2'
+		append using `d_`l'_3'
 		replace risk = 3 if mi(risk)
 		gen n = _n
 		rename webb_pct_ pct_`l'
@@ -268,7 +268,9 @@ cd "/Users/lucaskitzmueller/Documents/04_Master/10_Courses/29_Data Visualization
 	order risk 
 	drop n
 	drop _merge*
-	keep if risk == 1
+	label define risk 1 "ai" 2 "robot" 3 "software"
+	label values risk risk 
+	order pct* risk 
 	export delimited using "../08_ridgeline/data.csv", replace
 
 	

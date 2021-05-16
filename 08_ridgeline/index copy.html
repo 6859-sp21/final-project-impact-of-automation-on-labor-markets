@@ -150,53 +150,22 @@
 	  // A function that update the chart when slider is moved?
 	  function updateChart(selectedGroup) {
 	    // recompute density estimation
-	    //kde = kernelDensityEstimator(kernelEpanechnikov(7), x.ticks(40))
-	    //var density =  kde( data
-	    //  .filter(function(d){ return d.Species == selectedGroup})
-	    //  .map(function(d){  return +d.Sepal_Length; })
-	    //)
-
-	  	kde = kernelDensityEstimator(kernelEpanechnikov(7), x.ticks(40)) // increase this 40 for more accurate density.
-   	    var allDensity = []
-	    for (i = 0; i < n; i++) {
-	      key = categories[i]
-	      density = kde( data
-	      	.filter(function(d){ return d.risk == selectedGroup})
-	      	.map(function(d){  return d[key]; }) )
-	      allDensity.push({key: key, density: density})
-	  }
+	    kde = kernelDensityEstimator(kernelEpanechnikov(3), x.ticks(40))
+	    var density =  kde( data
+	      .filter(function(d){ return d.Species == selectedGroup})
+	      .map(function(d){  return +d.Sepal_Length; })
+	    )
 
 	    // update the chart
-	    //curve
-	    //  .datum(density)
-	    //  .transition()
-	    //  .duration(1000)
-	    //  .attr("d",  d3.line()
-	    //    .curve(d3.curveBasis)
-	    //      .x(function(d) { return x(d[0]); })
-	    //      .y(function(d) { return y(d[1]); })
-	    //  );
-	  curve = svg.selectAll("areas")
-	    .data(allDensity)
-	    .enter()
-	    .append("path")
-	      .attr("transform", function(d){return("translate(0," + (yName(d.key)-height) +")" )})
-	      .attr("fill", function(d){
-	        grp = d.key ;
-	        index = categories.indexOf(grp)
-	        value = allMeans[index]
-	        return myColor( value  )
-	      })
-	      .datum(function(d){return(d.density)})
-	      .attr("opacity", 0.7)
-	      .attr("stroke", "#000")
-	      .attr("stroke-width", 0.1)
+	    curve
+	      .datum(density)
+	      .transition()
+	      .duration(1000)
 	      .attr("d",  d3.line()
-	          .curve(d3.curveBasis)
+	        .curve(d3.curveBasis)
 	          .x(function(d) { return x(d[0]); })
 	          .y(function(d) { return y(d[1]); })
-	      )
-
+	      );
 	  }
 
 	  // Listen to the slider?
