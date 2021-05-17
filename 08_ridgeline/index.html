@@ -24,11 +24,15 @@
 
 	<!-- Viridis color palette-->
 	<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+	<script src="https://d3js.org/d3-color.v2.min.js"></script>
+	<script src="https://d3js.org/d3-interpolate.v2.min.js"></script>
+	<script src="https://d3js.org/d3-scale-chromatic.v2.min.js"></script>
 
 </head>
 
 <body>
 
+	
 	<script>
 
 	// templates used:
@@ -38,9 +42,9 @@
 
 
 	// set the dimensions and margins of the graph
-	var margin = {top: 80, right: 30, bottom: 50, left:110},
-	    width = 460 - margin.left - margin.right,
-	    height = 400 - margin.top - margin.bottom;
+	var margin = {top: 80, right: 30, bottom: 50, left:200},
+	    width = 600 - margin.left - margin.right,
+	    height = 500 - margin.top - margin.bottom;
 
 	// append the svg object to the body of the page
 	var svg = d3.select("#my_dataviz")
@@ -67,21 +71,26 @@
 	    .attr("value", function (d) { return d; }) // corresponding value returned by the button
 
 	  // Get the different categories and count them
-	  var categories = ["pct_1","pct_2","pct_3","pct_4","pct_5","pct_6"]
+	  //var categories = ["NoFormal","HighSchool","SomeCollege","Associate","Bachelor","Master"]
+	  var categories = ["No formal educational credential", "High school diploma",	"Some college or postsecondary nondegree",	"Associate's degree",	"Bachelor's degree",	"Master's or doctoral degree"]
 	  var n = categories.length
 
 	  // Compute the mean of each group
 	  allMeans = []
 	  for (i in categories){
 	    currentGroup = categories[i]
-	    mean = d3.mean(data, function(d) { return +d[currentGroup] })
+	    mean = d3.mean(data
+	    	.filter(function(d){ return d.risk == "AI EXPOSURE"}), function(d) { return +d[currentGroup] })
 	    allMeans.push(mean)
 	  }
 
 	  // Create a color scale using these means.
-	  var myColor = d3.scaleSequential()
-	    .domain([0,100])
-	    .interpolator(d3.interpolateViridis);
+	  //var myColor = d3.scaleSequential()
+	  //  .domain([30,50])
+	  //  .interpolator(d3.interpolateViridis);
+      var myColor = d3.scaleSequential(d3.interpolateBlues)
+      	.domain([10,65]);
+      //colors = ['#e6eff9', '#c9e2f5', '#95cbee', '#0098db', '#0079ae']
 
 	  // Add X axis
 	  var x = d3.scaleLinear()
@@ -115,15 +124,20 @@
 	    .select(".domain").remove()
 
 	  // Compute kernel density estimation for each column:
-	  var kde = kernelDensityEstimator(kernelEpanechnikov(7), x.ticks(40)) // increase this 40 for more accurate density.
+	  var kde = kernelDensityEstimator(kernelEpanechnikov(9), x.ticks(40)) // increase this 40 for more accurate density.
 	  var allDensity = []
 	  for (i = 0; i < n; i++) {
 	      key = categories[i]
 	      density = kde( data
-	      	.filter(function(d){ return d.risk == "ai"})
+	      	.filter(function(d){ return d.risk == "AI EXPOSURE"})
 	      	.map(function(d){  return d[key]; }) )
 	      allDensity.push({key: key, density: density})
 	  }
+
+	  // tooltip
+	  var div = d3.select("body").append("div")
+     .attr("class", "tooltip-donut")
+     .style("opacity", 0);
 
 	  // Add areas
 	  var curve = svg.selectAll("areas")
@@ -131,6 +145,16 @@
 	    .enter()
 	    .append("path")
 	      .attr("transform", function(d){return("translate(0," + (yName(d.key)-height) +")" )})
+	      .on('mouseover', function (d, i) {
+	          d3.select(this).transition()
+	               .duration('50')
+	               .attr('opacity', '.85')
+	           })     
+	      .on('mouseout', function (d, i) {
+	          d3.select(this).transition()
+	               .duration('50')
+	               .attr('opacity', '0.7')
+	           })
 	      .attr("fill", function(d){
 	        grp = d.key ;
 	        index = categories.indexOf(grp)
@@ -146,6 +170,8 @@
 	          .x(function(d) { return x(d[0]); })
 	          .y(function(d) { return y(d[1]); })
 	      )
+	           //Our new hover effects
+
 
 	  // A function that update the chart when slider is moved?
 	  function updateChart(selectedGroup) {
@@ -156,7 +182,16 @@
 	    //  .map(function(d){  return +d.Sepal_Length; })
 	    //)
 
-	  	kde = kernelDensityEstimator(kernelEpanechnikov(7), x.ticks(40)) // increase this 40 for more accurate density.
+		  // Re-Compute the mean of each group
+		  allMeans = []
+		  for (i in categories){
+		    currentGroup = categories[i]
+		    mean = d3.mean(data
+		    	.filter(function(d){ return d.risk == selectedGroup}), function(d) { return +d[currentGroup] })
+		    allMeans.push(mean)
+		  }
+
+	  	kde = kernelDensityEstimator(kernelEpanechnikov(9), x.ticks(40)) // increase this 40 for more accurate density.
    	    var allDensity = []
 	    for (i = 0; i < n; i++) {
 	      key = categories[i]
@@ -165,6 +200,8 @@
 	      	.map(function(d){  return d[key]; }) )
 	      allDensity.push({key: key, density: density})
 	  }
+
+
 
 	    // update the chart // from code example 
 	    //curve
@@ -191,10 +228,10 @@
         index = categories.indexOf(grp)
         value = allMeans[index]
         return myColor( value  )
-      })
+      	})
       .datum(function(d){return(d.density)})
       .transition()
-      .duration(1000)
+      .duration(400)
       .attr("opacity", 0.7)
       .attr("stroke", "#000")
       .attr("stroke-width", 0.1)
@@ -227,6 +264,10 @@
 	    return Math.abs(v /= k) <= 1 ? 0.75 * (1 - v * v) / k : 0;
 	  };
 	}
+
+	//<button onclick="updateChart('AI EXPOSURE')">AI EXPOSURE</button>
+    //<button onclick="updateChart('ROBOT EXPOSURE')">ROBOT EXPOSURE</button>
+    //<button onclick="updateChart('SOFTWARE EXPOSURE')">SOFTWARE EXPOSURE</button>
 
 	</script>
 

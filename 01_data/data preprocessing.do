@@ -242,7 +242,7 @@ cd "/Users/lucaskitzmueller/Documents/04_Master/10_Courses/29_Data Visualization
 			use `ridge', clear
 			keep if ed == `l'
 			keep if risk == `r'
-			gsample 300 [aw=employment2019]
+			gsample 100 [aw=employment2019]
 			keep webb_pct_
 			tempfile d_`l'_`r'
 			save `d_`l'_`r''
@@ -268,12 +268,23 @@ cd "/Users/lucaskitzmueller/Documents/04_Master/10_Courses/29_Data Visualization
 	order risk 
 	drop n
 	drop _merge*
-	label define risk 1 "ai" 2 "robot" 3 "software"
+	label define risk 1 "AI EXPOSURE" 2 "ROBOT EXPOSURE" 3 "SOFTWARE EXPOSURE"
 	label values risk risk 
 	order pct* risk 
-	export delimited using "../08_ridgeline/data.csv", replace
-
 	
+	rename pct_1 Associate	
+	rename pct_2 Bachelor 
+	rename pct_3 Master	
+	rename pct_4 HighSchool
+	rename pct_5 NoFormal
+	rename pct_6 SomeCollege
+	
+	order NoFormal HighSchool SomeCollege Associate Bachelor Master 
+	
+	export delimited using "../08_ridgeline/data.csv", replace
+	
+	bysort risk: su NoFormal HighSchool SomeCollege Associate Bachelor Master risk
+
 	exit 
 
 	/*
