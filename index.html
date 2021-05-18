@@ -4,25 +4,37 @@
 <head>
     <!-- Minimal HTML head elements -->
     <meta charset="utf-8" />
-    <title>Automation Risk Project</title>
+    <title>Who's Actually Susceptable?</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="dist/squaire.css" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/linechart.css" />
+    <!-- <link rel="stylesheet" href="css/scroll.css" /> -->
 </head>
 
 <body>
     <!-- Title of the page -->
+    <h1>Who's Susceptable To The Automation Boom? [TODO: Artificial Intelligence, Robotics,] </h1>
+    <h4>By Lucas Kitzmueller & Bhavik Nagda | May, 2021</h4>
+    <h2>The last few decades have witnessed rapid advances in automation technology amidst growing anxiety about the
+        labor market. As emerging technologies mature and gain commercial traction, concerns of jobs displacement will
+        only heighten. Scroll down to learn more about the impacts of automation on certain economies,
+        geographies, and demographics.
+    </h2>
 
-
-    <section class="wrapper style1 inner">
+    <section class="wrapper style1 inner block-map linechart">
         <h2>Line Chart</h2>
         <div id="linechart-box"></div>
         <div id="linechart-year"></div>
     </section>
-
+    <section class="linechart" id="linechart-step1">
+        Testing out here ONE!
+    </section>
+    <section class="linechart" id="linechart-step2">
+        Testing out here TWO!
+    </section>
     <section class="wrapper style1 inner block-map">
         <h2>The Geographical Distribution of Automation Risk</h2>
         <div class="toggle-data-buttons">
@@ -63,11 +75,15 @@
         d3v3 = window.d3;
         window.d3 = null;
     </script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
     <script src="" charset="utf-8"></script>
     <script src="dist/squaire.js"></script>
     <script src="js/script.js"></script>
     <script src="js/treemap.js"></script>
     <script src="js/linechart.js"></script>
+    <!-- <script src="js/scroll.js"></script> -->
 </body>
 
 </html>

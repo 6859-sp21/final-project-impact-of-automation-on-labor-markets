@@ -252,6 +252,44 @@ function build_graph(data) {
                 });
         });
 
+    // for (var i = 0; i < lines.length; i++) {
+    //     const lineLength = lines[i].getTotalLength();
+    //     d3v4.select(lines[i])
+    //         .attr("stroke-dasharray", lineLength + " " + lineLength)
+    //         .attr("stroke-dashoffset", lineLength)
+    //         .transition()
+    //         .duration(7000)
+    //         .ease(d3v4.easeQuadOut)
+    //         .attr("stroke-dashoffset", 0);
+    // }
+
+    // var year_svg = d3v4.select("#linechart-year").append("svg")
+    //     .attr("width", 500)
+    //     .attr("height", 100)
+    //     .append("g")
+    //     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    // var year_text = year_svg.append("text")
+    //     .attr("x", 50)
+    //     .attr("y", 50)
+    //     .text("start");
+
+    // year_text.transition()
+    //     .tween("text", function () {
+    //         var selection = d3v4.select(this);    // selection of node being transitioned
+    //         var start = 1983; // start value prior to transition
+    //         var end = 2021; // specified end value
+    //         var interpolator = d3v4.interpolateNumber(start, end); // d3 interpolator
+
+    //         return function (t) { selection.text("1983-" + Math.round(interpolator(t))); };  // return value
+
+    //     })
+    //     .duration(7000)
+    //     .ease(d3v4.easeQuadOut);
+}
+
+function linechart_animation() {
+    var lines = document.getElementsByClassName('line');
     for (var i = 0; i < lines.length; i++) {
         const lineLength = lines[i].getTotalLength();
         d3v4.select(lines[i])
@@ -263,11 +301,13 @@ function build_graph(data) {
             .attr("stroke-dashoffset", 0);
     }
 
+    d3v4.select("#linechart-year > svg").remove();
     var year_svg = d3v4.select("#linechart-year").append("svg")
         .attr("width", 500)
         .attr("height", 100)
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
 
     var year_text = year_svg.append("text")
         .attr("x", 50)
