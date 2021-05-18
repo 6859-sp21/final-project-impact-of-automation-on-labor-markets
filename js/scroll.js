@@ -31,7 +31,7 @@ gsap.registerPlugin(ScrollTrigger);
 //text box with the bottom of the chart
 ScrollTrigger.create({
     trigger: '#linechart-box',
-    endTrigger: '#linechart-step2',
+    endTrigger: '#linechart-step5',
     start: 'center center',
     end: () => {
         const height = window.innerHeight;
@@ -44,6 +44,31 @@ ScrollTrigger.create({
     markers: true,
     id: 'chart-pin',
     onEnter: linechart_animation,
+});
+
+ScrollTrigger.create({
+    trigger: '#my_dataviz',
+    endTrigger: '#ridgeline-step5',
+    start: 'center center',
+    end: () => {
+        const height = window.innerHeight;
+        const chartHeight = document.querySelector('#my_dataviz')
+            .offsetHeight;
+        return `bottom ${chartHeight + (height - chartHeight) / 2}px`;
+    },
+    pin: true,
+    pinSpacing: false,
+    markers: true,
+    id: 'chart-pin',
+});
+
+ScrollTrigger.create({
+    trigger: '#ridgeline-step2',
+    endTrigger: '#ridgeline-step3',
+    start: 'center center',
+    markers: true,
+    id: 'chart-pin',
+    onEnter: ridgeline_robot_to_ai,
 });
 
 // imagesLoaded(images).on('progress', updateProgress).on('always', showDemo);

@@ -1,7 +1,7 @@
 // set the dimensions and margins of the graph
 var margin = { top: 80, right: 30, bottom: 50, left: 200 },
-    width = 600 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    width = 1200 - margin.left - margin.right,
+    height = 600 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg = d3v4.select("#my_dataviz")
@@ -13,7 +13,7 @@ var svg = d3v4.select("#my_dataviz")
         "translate(" + margin.left + "," + margin.top + ")");
 
 //read data
-d3v4.csv("data/ridgeline_data.csv", function (data) {
+d3v4.csv("https://raw.githubusercontent.com/6859-sp21/final-project-impact-of-automation-on-labor-markets/main/data/ridgeline_data.csv", function (data) {
 
     // List of groups (here I have one group per column)
     var allGroup = d3v4.map(data, function (d) { return (d.risk) }).keys()
@@ -174,6 +174,7 @@ d3v4.csv("data/ridgeline_data.csv", function (data) {
         //  .data(allDensity)
 
         //curve.exit().remove()
+        console.log(data);
 
         curve
             .data(allDensity)
@@ -220,6 +221,12 @@ function kernelEpanechnikov(k) {
     return function (v) {
         return Math.abs(v /= k) <= 1 ? 0.75 * (1 - v * v) / k : 0;
     };
+}
+
+function ridgeline_robot_to_ai() {
+    d3v4.select('#selectButton').property('value', 'ROBOT EXPOSURE');
+    console.log(d3v4.select('#selectButton'));
+    d3v4.select('#selectButton').dispatch("change");
 }
 
 	//<button onclick="updateChart('AI EXPOSURE')">AI EXPOSURE</button>

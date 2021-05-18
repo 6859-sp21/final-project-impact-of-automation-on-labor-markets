@@ -4,14 +4,14 @@
 <head>
     <!-- Minimal HTML head elements -->
     <meta charset="utf-8" />
-    <title>Who's Actually Susceptable?</title>
+    <title>Who's Susceptable?</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="dist/squaire.css" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/linechart.css" />
-    <!-- <link rel="stylesheet" href="css/scroll.css" /> -->
+    <link rel="stylesheet" href="css/scroll.css" />
 </head>
 
 <body>
@@ -20,21 +20,84 @@
     <h4>By Lucas Kitzmueller & Bhavik Nagda | May, 2021</h4>
     <h2>The last few decades have witnessed rapid advances in automation technology amidst growing anxiety about the
         labor market. As emerging technologies mature and gain commercial traction, concerns of jobs displacement will
-        only heighten. Scroll down to learn more about the impacts of automation on certain economies,
-        geographies, and demographics.
+        only heighten. New technologies create winners and losers. They improve employment opportunities for some
+        workers but lower the demand for others. Scroll down to learn more about the impacts of automation on certain
+        economies, geographies, and demographics.
     </h2>
 
     <section class="wrapper style1 inner block-map linechart">
-        <h2>Line Chart</h2>
         <div id="linechart-box"></div>
         <div id="linechart-year"></div>
     </section>
-    <section class="linechart" id="linechart-step1">
-        Testing out here ONE!
+    <section class="linechart story" id="linechart-step2">
+        In the last 30 years, it was primarily workers in middle-skilled occupations in production and administration
+        who found themselves on the wrong side of the demand curve. These jobs have in common that they require
+        challenging, yet at the end of the day, repetitive routine tasks that can be automated.
     </section>
-    <section class="linechart" id="linechart-step2">
-        Testing out here TWO!
+    <section class="linechart story" id="linechart-step3">
+        For example, industrial robots reduced the need for factory workers and computers have reduced the demand for
+        secretaries. [can we highlight the blue and red lines for this paragraph?]
     </section>
+    <section class="linechart story" id="linechart-step4">
+        While employment in middle-skill occupations was declining, high-skill occupations such as managers and
+        professionals were growing [highlight yellow line]. These occupations rely on cognitive non-routine tasks, which
+        to date have been proven hard to automate.
+    </section>
+    <section class="linechart story" id="linechart-step5">
+        Similarly, low-skill occupations with a large share of manual routine tasks have been growing [highlight green
+        line]. This includes, for example, workers in personal care services. [maybe include reference to Autor,
+        Mindell, Reynolds 2020]
+    </section>
+    <section class="text story">
+        The declining cost of automating routine tasks through robotics and software, and the associated decline in
+        middle-skilled jobs, have been a primary driver of income inequality in the US over the recent decades.
+        Therefore, advances in artificial intelligence have fueled concerns over the continued displacement of
+        middle-skilled workers and erosion of the middle class. As AI progresses into fields such as speech and visual
+        recognition, it vastly expands the scope of tasks and jobs that can be automated.
+
+        However, as adoption of AI remains limited [McKinsey report], it still unclear what workers will be affected by
+        AI. Fortunately, the Stanford economist Michael Webb has developed a clever way to measure future exposure to AI
+        technologies.
+    </section>
+
+    <section class="wrapper style1 inner block-map ridgeline">
+        <select id="selectButton"></select>
+        <!-- Create a div where the graph will take place -->
+        <div id="my_dataviz"></div>
+    </section>
+    <section class="ridgeline story" id="ridgeline-step2">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis
+        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </section>
+    <section class="ridgeline story" id="ridgeline-step3">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis
+        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </section>
+    <section class="ridgeline story" id="ridgeline-step4">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis
+        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </section>
+    <section class="ridgeline story" id="ridgeline-step5">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis
+        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </section>
+
     <section class="wrapper style1 inner block-map">
         <h2>The Geographical Distribution of Automation Risk</h2>
         <div class="toggle-data-buttons">
@@ -51,21 +114,15 @@
         <div id="custom-tooltip-toolbox" class="squaire-toolbox"></div>
     </section>
 
-    <section class="wrapper style1 inner block-map">
-        <h2>Quantifying Occupational Risk of Automation</h2>
-        <!-- Add 2 buttons -->
-        <button onclick="update(data_ai_path)">AI exposure</button>
-        <button onclick="update(data_robot_path)">Robot exposure</button>
-        <button onclick="update(data_software_path)">Software exposure</button>
-
-        <!-- Create a div where the graph will take place -->
-        <div id="my_dataviz"></div>
-    </section>
 
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3-color.v2.min.js"></script>
+    <script src="https://d3js.org/d3-interpolate.v2.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v2.min.js"></script>
     <script>
         d3v4 = window.d3;
         window.d3 = null;
@@ -83,7 +140,7 @@
     <script src="js/script.js"></script>
     <script src="js/ridgeline.js"></script>
     <script src="js/linechart.js"></script>
-    <!-- <script src="js/scroll.js"></script> -->
+    <script src="js/scroll.js"></script>
 </body>
 
 </html>

@@ -110,11 +110,13 @@
         }
 
         function getTooltipColorScale(index) {
-            var extent = getExtent(index),
-                colors = ['#e6eff9', '#c9e2f5', '#95cbee', '#0098db', '#0079ae'],
+            // var extent = getExtent(index),
+            var extent = [30.543669, 54.762272];
+            var colors = ['#e6eff9', '#c9e2f5', '#95cbee', '#0098db', '#0079ae'],
                 colorScale = d3v3.scale.quantize()
                     .domain(extent)
                     .range(colors);
+
             updateLegend(extent, colors, index);
             return colorScale;
         }
