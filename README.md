@@ -3,7 +3,14 @@
 ## Team Members
 Bhavik Nagda, Lucas Kitzmüller
 
-##
+## 
+Our project v
+
+## Final Paper
+The accompanying paper can be found here:
+
+## Final Video
+The 1-minute video demonstration: https://youtu.be/FOIVNi48_V4 
 
 
 
