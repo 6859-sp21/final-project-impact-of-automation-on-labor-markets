@@ -26,7 +26,7 @@ Video from milestone review: https://www.youtube.com/watch?v=ZgZYCndBIvM
 Our research and development process included the following steps: (1) Literature review on the impact of technology on US labor markets, (2) researching and pre-porcessing datasets (merging, coding of variables, agreggation and weighting), (3) exploratory data analysis, (4) iterative development of individual charts, (5) scrollytelling. 
 
 ## Division of Work
-* Bhavik took the lead on the line chart of historic trends, the tile grid map, and the scrollytelling.
+* Bhavik took the lead on the line chart of historic trends, the tile grid map, the scrollytelling, and and the aesthetics of the website.
 * Lucas took the lead on data pre-processing, the ridgeline plot, the treemap (included in milestone review but not in the final product), and the text for scrollytelling.
 
 ## Code sources
