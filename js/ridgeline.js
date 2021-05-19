@@ -1,7 +1,7 @@
 // set the dimensions and margins of the graph
-var margin = { top: 80, right: 30, bottom: 50, left: 200 },
-    width = 1200 - margin.left - margin.right,
-    height = 600 - margin.top - margin.bottom;
+var margin = { top: 150, right: 30, bottom: 50, left: 400 },
+    width = 1400 - margin.left - margin.right,
+    height = 700 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg = d3v4.select("#my_dataviz")
@@ -11,6 +11,12 @@ var svg = d3v4.select("#my_dataviz")
     .append("g")
     .attr("transform",
         "translate(" + margin.left + "," + margin.top + ")");
+
+var text_transform = {
+    'ROBOT EXPOSURE': 'Robot Exposure',
+    'AI EXPOSURE': 'AI exposure',
+    'SOFTWARE EXPOSURE': 'Software Exposure',
+}
 
 //read data
 d3v4.csv("https://raw.githubusercontent.com/6859-sp21/final-project-impact-of-automation-on-labor-markets/main/data/ridgeline_data.csv", function (data) {
@@ -37,7 +43,7 @@ d3v4.csv("https://raw.githubusercontent.com/6859-sp21/final-project-impact-of-au
     for (i in categories) {
         currentGroup = categories[i]
         mean = d3v4.mean(data
-            .filter(function (d) { return d.risk == "AI EXPOSURE" }), function (d) { return +d[currentGroup] })
+            .filter(function (d) { return d.risk == "ROBOT EXPOSURE" }), function (d) { return +d[currentGroup] })
         allMeans.push(mean)
     }
 
@@ -62,9 +68,12 @@ d3v4.csv("https://raw.githubusercontent.com/6859-sp21/final-project-impact-of-au
     // Add X axis label:
     svg.append("text")
         .attr("text-anchor", "end")
-        .attr("x", width)
-        .attr("y", height + 40)
-        .text("Risk percentile");
+        .attr("x", width / 2 + 80)
+        .attr("y", -100)
+        .attr('id', "ridgeline-label")
+        .style("font-size", "24px")
+        .style("font-family", "Georgia, 'Times New Roman', Times, serif")
+        .text("Risk Percentile for Robot Exposure");
 
     // Create a Y scale for densities
     var y = d3v4.scaleLinear()
@@ -86,7 +95,7 @@ d3v4.csv("https://raw.githubusercontent.com/6859-sp21/final-project-impact-of-au
     for (i = 0; i < n; i++) {
         key = categories[i]
         density = kde(data
-            .filter(function (d) { return d.risk == "AI EXPOSURE" })
+            .filter(function (d) { return d.risk == "ROBOT EXPOSURE" })
             .map(function (d) { return d[key]; }))
         allDensity.push({ key: key, density: density })
     }
@@ -138,7 +147,8 @@ d3v4.csv("https://raw.githubusercontent.com/6859-sp21/final-project-impact-of-au
         //  .filter(function(d){ return d.Species == selectedGroup})
         //  .map(function(d){  return +d.Sepal_Length; })
         //)
-
+        console.log(text_transform[selectedGroup]);
+        d3v4.select('#ridgeline-label').text("Risk Percentile for " + text_transform[selectedGroup]);
         // Re-Compute the mean of each group
         allMeans = []
         for (i in categories) {
@@ -203,6 +213,7 @@ d3v4.csv("https://raw.githubusercontent.com/6859-sp21/final-project-impact-of-au
 
     // Listen to the slider?
     d3v4.select("#selectButton").on("change", function (d) {
+        console.log("CHANGING!!!")
         selectedGroup = this.value
         updateChart(selectedGroup)
     })
@@ -223,10 +234,11 @@ function kernelEpanechnikov(k) {
     };
 }
 
-function ridgeline_robot_to_ai() {
-    d3v4.select('#selectButton').property('value', 'ROBOT EXPOSURE');
+function ridgeline_ai_to_robot() {
+    d3v4.select('#selectButton').property('value', 'AI EXPOSURE');
     console.log(d3v4.select('#selectButton'));
     d3v4.select('#selectButton').dispatch("change");
+    console.log("TOTTTTT HERE")
 }
 
 	//<button onclick="updateChart('AI EXPOSURE')">AI EXPOSURE</button>

@@ -22,7 +22,8 @@ section, summary, time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	/* font: inherit; */
 	vertical-align: baseline;}
 
 article, aside, details, figcaption, figure,
@@ -161,7 +162,8 @@ input, select, textarea {
 	}
 
 	body, input, select, textarea {
-		font-family: "Source Sans Pro", Helvetica, sans-serif;
+		/* font-family: "Source Sans Pro", Helvetica, sans-serif; */
+		font-family: Georgia, 'Times New Roman', Times, serif;
 		font-size: 1rem;
 		font-weight: 300;
 		line-height: 1.65;
@@ -198,7 +200,6 @@ input, select, textarea {
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: 300;
 		line-height: 1.375;
-		letter-spacing: -0.05em;
 		margin: 0 0 1rem 0;
 	}
 
@@ -210,7 +211,7 @@ input, select, textarea {
 	h1 {
 		font-size: 3.5rem;
 		line-height: 1.2;
-		font-weight: 400;
+		font-weight: 500;
 	}
 
 	h2 {

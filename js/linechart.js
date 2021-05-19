@@ -25,9 +25,9 @@ var myData = "date	New York	San Francisco	Austin\n\
 
 var margin = {
     top: 20,
-    right: 150,
+    right: 250,
     bottom: 30,
-    left: 50
+    left: 100
 },
     width = 1400 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
@@ -63,8 +63,11 @@ async function _data() {
 
 function build_graph(data) {
     var svg = d3v4.select("#linechart-box").append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
+        // .attr("width", width + margin.left + margin.right)
+        // .attr("height", height + margin.top + margin.bottom)
+        .attr("preserveAspectRatio", "xMinYMin meet")
+        .attr("viewBox", "0 0 960 500")
+        .attr("margin", "auto")
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -113,7 +116,7 @@ function build_graph(data) {
         .attr('class', 'legend');
 
     legend.append('rect')
-        .attr('x', width)
+        .attr('x', 400)
         .attr('y', function (d, i) {
             return i * 20;
         })
@@ -124,10 +127,11 @@ function build_graph(data) {
         });
 
     legend.append('text')
-        .attr('x', width + 16)
+        .attr('x', 400 + 16)
         .attr('y', function (d, i) {
             return (i * 20) + 9;
         })
+        .attr('font-size', '2em')
         .text(function (d) {
             return d.name;
         });
@@ -158,7 +162,7 @@ function build_graph(data) {
         .attr("d", function (d) {
             return line(d.values);
         })
-        .attr("stroke-width", 20)
+        .attr("stroke-width", 3)
         .style("stroke", function (d) {
             return color(d.name);
         });
@@ -326,6 +330,46 @@ function linechart_animation() {
         })
         .duration(7000)
         .ease(d3v4.easeQuadOut);
+}
+
+
+function line_highlight_blue_red() {
+    var lines = document.getElementsByClassName('line');
+    for (var i = 0; i < lines.length; i++) {
+        var line = lines[i];
+        console.log(line);
+        if (line.__data__.name != "Routine Cognitive" && line.__data__.name != "Non-Routine Manual") {
+            line.style.opacity = 0.2;
+        } else {
+            line.style.opacity = 1.0
+        }
+    }
+}
+
+function line_highlight_yellow() {
+    var lines = document.getElementsByClassName('line');
+    for (var i = 0; i < lines.length; i++) {
+        var line = lines[i];
+        console.log(line);
+        if (line.__data__.name != "Non-Routine Cognitive") {
+            line.style.opacity = 0.2;
+        } else {
+            line.style.opacity = 1.0
+        }
+    }
+}
+
+function line_highlight_green() {
+    var lines = document.getElementsByClassName('line');
+    for (var i = 0; i < lines.length; i++) {
+        var line = lines[i];
+        console.log(line);
+        if (line.__data__.name != "Routine Manual") {
+            line.style.opacity = 0.2;
+        } else {
+            line.style.opacity = 1.0
+        }
+    }
 }
 
 async function main() {

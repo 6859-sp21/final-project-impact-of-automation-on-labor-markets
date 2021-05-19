@@ -2,6 +2,12 @@
 
     $(function () {
 
+        var map_text_transform = {
+            'webb_pct_robot': 'Robot Exposure',
+            'webb_pct_ai': 'AI exposure',
+            'webb_pct_software': 'Software Exposure',
+        }
+
 
         var state_abbr = {
             'Alabama': 'AL',
@@ -195,6 +201,8 @@
             var index = $(this).addClass('btn-primary').data('index'),
                 colorScale = getTooltipColorScale(index);
 
+            console.log(index);
+            d3v4.select('#title-map').text('Risk Percentile for ' + map_text_transform[index])
             tooltipMap.update(false, {
                 index: index,
                 colors: colorScale
@@ -268,3 +276,7 @@
     });
 
 })();
+
+function map_robot_to_ai() {
+    document.getElementById('ai-map').click()
+}
