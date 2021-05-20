@@ -20,7 +20,7 @@ The 1-minute video demonstration: https://youtu.be/FOIVNi48_V4
 Video from milestone review: https://www.youtube.com/watch?v=ZgZYCndBIvM
 
 ##  Commentary on research/development process
-Our research and development process included the following steps: (1) Literature review on the impact of technology on US labor markets, (2) researching and pre-porcessing datasets (merging, coding of variables, agreggation and weighting), (3) exploratory data analysis, (4) iterative development of individual charts, (5) scrollytelling. 
+Our research and development process included the following steps: (1) Literature review on the impact of technology on US labor markets, (2) researching and pre-processing datasets (merging, coding of variables, agreggation and weighting), (3) exploratory data analysis, (4) iterative development of individual charts, (5) scrollytelling. 
 
 ## Division of Work
 * Bhavik took the lead on the line chart of historic trends, the tile grid map, the scrollytelling, and the aesthetics of the website.
