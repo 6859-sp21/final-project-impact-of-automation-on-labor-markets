@@ -7,7 +7,7 @@ Bhavik Nagda, Lucas Kitzmüller
 Our project visualizes how the impact of automation varies across demographics and geographies in the US.
 
 ## Final Product
-Link to website: 
+Link to website: https://6859-sp21.github.io/final-project-impact-of-automation-on-labor-markets/ 
 
 ## Final Paper
 The accompanying paper can be found here:
