@@ -6,12 +6,11 @@ Bhavik Nagda, Lucas Kitzmüller
 ## Abstract
 The last few decades have witnessed rapid advances in automation technology amidst growing anxiety about the labor market. As emerging technologies mature and gain commercial traction, concerns of jobs displacement will only heighten. We present a data article, driven by associated interactive visualizations, that explores the underlying demographic dynamics of automation displacement. In accordance with prior work, we place automation-related labor displacement into three categories – AI, robotics, and software, and explore the relationship between these factors and various geographic and educational factors. In particular, we highlight a surprising finding that while AI-related labor displacement disproportionately impacts highly-educated populations.
 
-
 ## Final Product
 Link to website: https://6859-sp21.github.io/final-project-impact-of-automation-on-labor-markets/ 
 
 ## Final Paper
-The accompanying paper can be found here:
+The accompanying paper can be found here: https://github.com/6859-sp21/final-project-impact-of-automation-on-labor-markets/blob/main/FinalPaper.pdf 
 
 ## Final Video
 The 1-minute video demonstration: https://youtu.be/FOIVNi48_V4 
