@@ -4,7 +4,8 @@
 Bhavik Nagda, Lucas Kitzmüller
 
 ## Abstract
-Our project visualizes how the impact of automation varies across demographics and geographies in the US.
+The last few decades have witnessed rapid advances in automation technology amidst growing anxiety about the labor market. As emerging technologies mature and gain commercial traction, concerns of jobs displacement will only heighten. We present a data article, driven by associated interactive visualizations, that explores the underlying demographic dynamics of automation displacement. In accordance with prior work, we place automation-related labor displacement into three categories – AI, robotics, and software, and explore the relationship between these factors and various geographic and educational factors. In particular, we highlight a surprising finding that while AI-related labor displacement disproportionately impacts highly-educated populations.
+
 
 ## Final Product
 Link to website: https://6859-sp21.github.io/final-project-impact-of-automation-on-labor-markets/ 
@@ -26,10 +27,10 @@ Our research and development process included the following steps: (1) Literatur
 * Lucas took the lead on data pre-processing, the ridgeline plot, the treemap (included in milestone review but not in the final product), and the text for scrollytelling.
 
 ## Code sources
-* Historic line chart:
-  *  
 * Ridgeline chart:
   * https://www.d3-graph-gallery.com/graph/ridgeline_template.html
   * https://www.d3-graph-gallery.com/graph/density_filter.html
-* Tile grid map: 
-  * 
+* Box map: 
+  * https://github.com/WSJ/squaire  
+* Scrollytelling:
+  * https://greensock.com/docs/v3/Plugins/ScrollTrigger-
