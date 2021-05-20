@@ -26,7 +26,7 @@ Our research and development process included the following steps: (1) Literatur
 * Bhavik took the lead on the line chart of historic trends, the tile grid map, the scrollytelling, and the aesthetics of the website.
 * Lucas took the lead on data pre-processing, the ridgeline plot, the treemap (included in milestone review but not in the final product), and the text for scrollytelling.
 
-## Code sources
+## Code Sources
 * Ridgeline chart:
   * https://www.d3-graph-gallery.com/graph/ridgeline_template.html
   * https://www.d3-graph-gallery.com/graph/density_filter.html
