@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Minimal HTML head elements -->
+    <meta charset="utf-8" />
+    <title>Who's Susceptable?</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dist/squaire.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/linechart.css" />
+    <link rel="stylesheet" href="css/scroll.css" />
+</head>
+
+<body>
+    <!-- Title of the page -->
+    <section class="wrapper style1 inner block-map top-header">
+        <h1>Who's Susceptible To The Automation Boom?</h1>
+        <h4>By Lucas Kitzmueller & Bhavik Nagda | May, 2021</h4>
+        <h3>The last few decades have witnessed rapid advances in automation technology amidst growing anxiety about
+            the
+            labor market. As emerging technologies mature and gain commercial traction, concerns of jobs
+            displacement
+            will
+            only heighten. New technologies create winners and losers. They improve employment opportunities for
+            some
+            workers but lower the demand for others. Scroll down to learn more about the impacts of automation on
+            certain
+            economies, geographies, and demographics.
+        </h3>
+    </section>
+
+    <section class="wrapper style1 inner block-map linechart">
+        <h2>A Brief History of Automation Risk</h2>
+        <div id="linechart-box"></div>
+        <div id="linechart-year"></div>
+    </section>
+    <section class="linechart story" id="linechart-step2">
+        In the last 30 years, it was primarily workers in middle-skilled occupations in production and
+        administration
+        who found themselves on the wrong side of the demand curve. These jobs have in common that they require
+        challenging, yet at the end of the day, repetitive routine tasks that can be automated.
+    </section>
+    <section class="linechart story" id="linechart-step3">
+        For example, industrial robots reduced the need for factory workers and computers have reduced the
+        demand
+        for
+        secretaries.
+    </section>
+    <section class="linechart story" id="linechart-step4">
+        While employment in middle-skill occupations was declining, high-skill occupations such as managers and
+        professionals were growing . These occupations rely on cognitive non-routine
+        tasks,
+        which
+        to date have been proven hard to automate.
+    </section>
+    <section class="linechart story" id="linechart-step5">
+        Similarly, low-skill occupations with a large share of manual routine tasks <a
+            href="https://workofthefuture.mit.edu/research-post/the-work-of-the-future-shaping-technology-and-institutions/">have
+            been growing. </a> This includes,
+        for example, workers in personal care services.
+    </section>
+    <section class="linechart story" id="linechart-step6">
+    </section>
+    <section class="text" id="text">
+        <h2>The Data</h2>
+        <br>
+        However, as the commercial adoption of AI is still nascent in many industries, it is still unclear what
+        workers
+        will be
+        affected by AI. While there exist many studies on the labor market impact of robot adoption, there are
+        no
+        comparable
+        studies for AI technologies.
+
+        Fortunately, the Stanford economist Michael Webb has <a href="https://www.michaelwebb.co/webb_ai.pdf"> developed
+            a clever way </a> to measure future exposure
+        to AI
+        technologies. His idea is the following: The text of AI-based patents contains information about what
+        technologies do,
+        and the text of job descriptions compiled by the Department of Labor contains information about the
+        tasks
+        people
+        do in
+        their jobs. Combining these two datasets, we can quantify what jobs AI may soon be capable of performing
+        at
+        the
+        workplace.
+
+        For example, one of the tasks of doctors is “Interpret tests to diagnose patient’s condition”. From
+        these
+        task
+        descriptions, Webb extracts verb-object pairs. In this case, the pairs would be (interpret, test) and
+        (diagnose,
+        condition). To then measure this task’s exposure to AI, Webb calculates the frequency of these
+        verb-object
+        pairs
+        in the
+        titles of all AI-based patents. With this method, he is able to rank 964 occupations in the database
+        according
+        to their
+        exposure to AI technology. To contrast the impact of AI with past technological shocks, Webb also
+        calculates
+        the
+        exposure to robots and software technologies.
+        <br>
+        <br>
+        <div class="image">
+            <img src="https://github.com/6859-sp21/final-project-impact-of-automation-on-labor-markets/blob/main/data/webb.png?raw=true"
+                alt="Michael Webb's Process">
+        </div>
+    </section>
+    <section class="wrapper style1 inner block-map">
+        <h2>Does Education Affect Automation Risk?</h2>
+        <select id="selectButton"></select>
+    </section>
+    <section class="ridgeline story start-story" id="ridgeline-step2">
+        For this analysis, we grouped occupations by their typical entry level education as determined by the
+        Bureau
+        of
+        Labor
+        Statistics. The graph shows distribution of Webb’s exposure estimates within each educational group.
+        Occupations
+        are
+        weighted by size (i.e., the number of workers employed in the occupation in 2019).
+    </section>
+    <section class="wrapper style1 inner ridgeline">
+        <!-- Create a div where the graph will take place -->
+        <div id="my_dataviz"></div>
+    </section>
+    <section class="ridgeline story" id="ridgeline-step3">
+        The data for robot exposure confirm the earlier finding: less-educated workers, typically employed in
+        jobs
+        with
+        a high
+        share of manual routine tasks, are more exposed to disruption from robotics than higher-educated
+        workers.
+    </section>
+    <section class="ridgeline story" id="ridgeline-step4">
+        The exposure estimates for AI, however, reveal an opposite pattern. Some lower-skill occupations, such
+        as
+        power
+        plant
+        operators and dispatchers, are still highly exposed. But many highly educated workers will be impacted
+        too,
+        such
+        as
+        clinical laboratory technicians, chemical engineers, and optometrists. In fact, workers with a
+        bachelor’s
+        degree
+        appear
+        to be exposed the most.
+    </section>
+    <section class="ridgeline story" id="ridgeline-step5">
+    </section>
+
+    <section class="wrapper style1 inner block-map map">
+        <h2>The Geographical Distribution of Automation Risk</h2>
+        <div class="toggle-data-buttons" id="toggle-data-buttons">
+            <button type="button" autocomplete="off" class="btn btn-default btn-primary" data-index="webb_pct_software"
+                id="software-map">Software
+                Automation Risk</button>
+            <button type="button" autocomplete="off" class="btn btn-default" data-index="webb_pct_robot"
+                id="robot-map">Robot
+                Automation Risk</button>
+            <button type="button" autocomplete="off" class="btn btn-default" data-index="webb_pct_ai" id="ai-map">AI
+                Automation
+                Risk</button>
+        </div>
+
+
+
+        <div id="custom-tooltip">
+            <div id="custom-tooltip-legend" class="legend legend-horizontal legend-scale"></div>
+            <h3 id="title-map">Risk Percentile for Robot Exposure</h3>
+        </div>
+        <div id="custom-tooltip-toolbox" class="squaire-toolbox"></div>
+    </section>
+    <section class="map story" id="map-step2">
+        Worker displacement represents a challenge for policymakers, especially if it is concentrated in few
+        labor
+        markets. The
+        map shows the exposure of states to different technologies, based on the occupational composition of
+        their
+        workforce as
+        calculated from the <a href="https://www.census.gov/programs-surveys/cps.html">Current Population Survey.</a>
+    </section>
+    <section class="map story" id="map-step3">
+        As expected, states involved in manufacturing, such as Wisconsin or Kentucky, are heavily impacted by
+        robotics.
+    </section>
+    <section class="map story" id="map-step4">
+        However, as AI is increasingly linked to production, the states involved in manufacturing appear to be
+        also
+        disproportionately exposed to AI. At the same time, states with a large high-tech sector and managerial
+        workforce, e.g.,
+        Washington DC, Boston, and Washington state, also have high exposure to AI technologies.
+    </section>
+    <section class="map story" id="map-step5">
+        These findings suggest that this time will be different: while past automation shocks primarily affected
+        lower
+        and
+        middle-skilled workers, AI is set to displace higher-skilled workers. And while increases in robots
+        primarily
+        impact
+        regions intensive in manufacturing, the impact of AI will be felt more widely across the US.
+    </section>
+    <section class="map story" id="map-step6">
+    </section>
+
+    <section class="wrapper style1 inner block-map" id="bottomSources">
+        <h5>Sources: Data from <a href="https://www.michaelwebb.co/webb_ai.pdf">Michael Webb's Paper </a> and the <a
+                href="https://fredblog.stlouisfed.org/2016/04/job-polarization/"> St. Louis Fed </a> </h5> <br>
+        <h5>Thank you to the 6.859 course staff for a wonderful semester!</h5>
+    </section>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3-color.v2.min.js"></script>
+    <script src="https://d3js.org/d3-interpolate.v2.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v2.min.js"></script>
+    <script>
+        d3v4 = window.d3;
+        window.d3 = null;
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+    <script>
+        d3v3 = window.d3;
+        window.d3 = null;
+    </script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
+    <script src="" charset="utf-8"></script>
+    <script src="dist/squaire.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/ridgeline.js"></script>
+    <script src="js/linechart.js"></script>
+    <script src="js/scroll.js"></script>
+</body>
+
+</html>
